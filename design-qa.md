@@ -1,0 +1,67 @@
+# Revisión del diseño Karpa
+
+**final result: passed**
+
+Alcance: implementación local de la página de inicio aprobada, con la conexión del formulario expresamente pendiente por decisión del usuario. No es una aprobación para publicar ni una prueba de envío de correo.
+
+## Referencias y método
+
+- Mockup desktop: `design/mockups/karpa-inicio-desktop-v1.png` (793 × 1983, concebido para 1440 px CSS).
+- Mockup mobile: `design/mockups/karpa-inicio-mobile-v1.png` (958 × 1641; dos tramos consecutivos, no pantallas diferentes).
+- Navegador: Codex In-app Browser, aplicación local en `http://127.0.0.1:4173/`.
+- Viewports comprobados: 1440 × 1000, 768 × 1000, 390 × 844 y 320 × 800. Sin desbordamiento horizontal.
+- Se guardaron capturas con la API del navegador y se compararon con los mockups mediante `view_image` sobre composiciones con referencia y resultado normalizados por ancho. La captura completa por scroll del navegador produjo fragmentos repetidos, por lo que se descartó; se revisaron capturas por sección y se verificó el DOM real.
+- Capturas entregables: `design/preview/karpa-desktop.png` y `design/preview/karpa-mobile.png`. Las referencias son imágenes generadas; se normalizaron sus tamaños al viewport de implementación, sin exigir igualdad de píxeles entre fotografía generada y original.
+
+## Hallazgos corregidos y revisión posterior
+
+1. Tipografía: se ajustaron tamaños desktop de títulos, cuerpo y marca; se refinó la escala y el salto de línea del encabezado institucional mobile. Inter local, sin descarga de tipografía desde servicios externos.
+2. Espacios: se redujo el espacio superior de la portada mobile y se ajustaron sus márgenes y cuerpo para acercar el inicio de la fotografía al mockup.
+3. Controles: se aumentó el tamaño desktop del CTA; campos con altura útil de 44 px, foco visible, etiquetas y validación nativa.
+4. Imágenes: las imágenes originales de baja resolución se ampliaron con Lanczos y nitidez suave tras aprobación del usuario. Se rechazaron los candidatos generativos que alteraban detalles técnicos. Se verificaron 17 imágenes, relaciones de aspecto exactas y dimensiones del manifiesto.
+5. Fotografías nuevas: portada con la foto original de 1600 px enviada por el usuario; fotos de taller en el detalle de servicios y tiendetubos en el detalle de equipos. No se les atribuyeron clientes ni obras por inferencia.
+
+## Superficies de fidelidad
+
+| Superficie | Resultado |
+| --- | --- |
+| Tipografía y jerarquía | Título principal en tres líneas, títulos firmes, textos y navegación con escala responsive. Ajustadas las diferencias de tamaño detectadas. |
+| Composición y espacios | Mismo orden de secciones, portada dividida y foto a ancho completo, secciones abiertas, imagen/texto alternados y reordenamiento mobile. |
+| Colores y superficies | Blanco y azul profundo; sin tarjetas, degradados, etiquetas decorativas ni métricas inventadas. |
+| Imágenes | Fotografías auténticas, encuadres responsive. Los originales no se sobrescriben. Reescalado convencional, sin prometer detalle fotográfico inexistente. |
+| Textos | Comparación de portada exacta: título, párrafo y CTA coinciden con el mockup, sin copy adicional. Información secundaria trazable a los PDF aportados. |
+| Iconos | Flechas, menú y cierre de Phosphor, trazo fino y alineación consistente; no gráficos sustitutos hechos con CSS. |
+
+## Interacciones verificadas
+
+- Menú mobile abre y cierra; elegir sección cierra el menú y navega al ancla.
+- Especialidades desplegables, texto y fotos de taller accesibles.
+- “Ver antecedentes” amplía la lista y permite volver al estado inicial; detalle de obra desplegable.
+- “Conocer nuestros equipos” abre diálogo nativo, enfoca el cierre, limita el foco al diálogo; Escape cierra, restaura foco al botón y habilita nuevamente el scroll.
+- Formulario valida campos obligatorios y correo. Una prueba local con datos ficticios muestra explícitamente que no se envió la consulta; no hay red, almacenamiento ni falsa confirmación de envío.
+- Enlace telefónico disponible; no se inició una llamada durante las pruebas.
+- Todos los recursos visibles cargados; sin errores ni avisos en la consola inspeccionada.
+- Movimiento reducido y navegación de teclado contemplados.
+
+## Diferencias intencionales / pendientes
+
+- La foto de portada fue reemplazada por una de las nuevas imágenes reales aportadas durante la implementación.
+- Las fotografías reales tienen variaciones de nitidez, color y encuadre frente a su reinterpretación en el mockup. Se prioriza veracidad y conservación del contenido.
+- P3: el emblema conserva el fondo y la definición del brochure. Un original vectorial o PNG transparente permitiría mejorar su acabado sin inventar el logo.
+- Pendiente acordado: destinatario y servicio de recepción del formulario. No se ha implementado envío a un correo ficticio.
+
+## Validación técnica
+
+- `npm run build`: correcto.
+- Cuatro pruebas del empaquetado/runtime: correctas con `node --test --test-isolation=none tests/sites-worker.test.mjs`. El comando por defecto encuentra una restricción de creación de subprocesos del sandbox; se ejecutaron las mismas pruebas sin aislamiento de proceso.
+- Manifiesto de 17 fotografías: dimensiones y proporciones verificadas; diferencia media RGB máxima al reducir nuevamente al tamaño original, 4,13/255. Esto comprueba conservación general, no recuperación de detalle perdido.
+
+No quedan diferencias P0/P1/P2 detectadas dentro del alcance acordado. La recepción de consultas y los recursos originales de mayor calidad permanecen explícitamente pendientes.
+
+## Ajuste al pedido original de la empresa
+
+- Se agregó una sección de nueve divisiones con encabezados y descripciones siempre visibles. Fibra óptica tiene entrada propia y ancla `#fibra-optica`.
+- La presentación corporativa (páginas 3–5) aporta gasoductos, poliductos, incendio, montaje, suelos, civiles y tritubo. Los antecedentes aportan acueductos/saneamiento, obras eléctricas y tendido de fibra en General Roca. No se atribuyen certificaciones ni servicios adicionales de telecomunicaciones.
+- Se mantiene la composición abierta con separadores finos: dos columnas desktop y una mobile. Esta ampliación de contenido responde al nuevo requisito del usuario y no estaba en el mockup inicial.
+- Revisión posterior en 1440, 768, 390 y 320 px: sin desbordamiento horizontal; nueve divisiones presentes, contenido de fibra legible y consola sin errores ni avisos. Capturas adicionales: `design/preview/divisiones-desktop.png` y `design/preview/fibra-optica-mobile.png`.
+- Compilación y cuatro pruebas del runtime nuevamente correctas tras el cambio.

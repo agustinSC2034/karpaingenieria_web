@@ -1,0 +1,240 @@
+[
+  {
+    "source": "img/2016-09-08-1.jpg",
+    "output": "img/hd/2016-09-08-1.webp",
+    "original_size": [
+      680,
+      510
+    ],
+    "output_size": [
+      2040,
+      1530
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/2016-09-08-2.jpg",
+    "output": "img/hd/2016-09-08-2.webp",
+    "original_size": [
+      680,
+      510
+    ],
+    "output_size": [
+      2040,
+      1530
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/2016-09-08-3.jpg",
+    "output": "img/hd/2016-09-08-3.webp",
+    "original_size": [
+      382,
+      510
+    ],
+    "output_size": [
+      1146,
+      1530
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/2016-09-08-4.jpg",
+    "output": "img/hd/2016-09-08-4.webp",
+    "original_size": [
+      680,
+      510
+    ],
+    "output_size": [
+      2040,
+      1530
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/2016-09-08.jpg",
+    "output": "img/hd/2016-09-08.webp",
+    "original_size": [
+      680,
+      510
+    ],
+    "output_size": [
+      2040,
+      1530
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/20161222_105000.jpg",
+    "output": "img/hd/20161222_105000.webp",
+    "original_size": [
+      680,
+      510
+    ],
+    "output_size": [
+      2040,
+      1530
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/airliquide-000.jpg",
+    "output": "img/hd/airliquide-000.webp",
+    "original_size": [
+      680,
+      432
+    ],
+    "output_size": [
+      2040,
+      1296
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/cisterna-000.jpg",
+    "output": "img/hd/cisterna-000.webp",
+    "original_size": [
+      680,
+      382
+    ],
+    "output_size": [
+      2040,
+      1146
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/cisterna-006.jpg",
+    "output": "img/hd/cisterna-006.webp",
+    "original_size": [
+      680,
+      439
+    ],
+    "output_size": [
+      2040,
+      1317
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/equipo-industrial-horizontal.png",
+    "output": "img/hd/equipo-industrial-horizontal.webp",
+    "original_size": [
+      455,
+      607
+    ],
+    "output_size": [
+      1365,
+      1821
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/equipo-industrial-vertical.png",
+    "output": "img/hd/equipo-industrial-vertical.webp",
+    "original_size": [
+      455,
+      607
+    ],
+    "output_size": [
+      1365,
+      1821
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/erp-002.jpg",
+    "output": "img/hd/erp-002.webp",
+    "original_size": [
+      680,
+      419
+    ],
+    "output_size": [
+      2040,
+      1257
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/IMG-20191108-WA0041.jpg",
+    "output": "img/hd/IMG-20191108-WA0041.webp",
+    "original_size": [
+      680,
+      382
+    ],
+    "output_size": [
+      2040,
+      1146
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/tiendetubos-en-obra.png",
+    "output": "img/hd/tiendetubos-en-obra.webp",
+    "original_size": [
+      900,
+      900
+    ],
+    "output_size": [
+      1800,
+      1800
+    ],
+    "scale": 2,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/unnamed.jpg",
+    "output": "img/hd/unnamed.webp",
+    "original_size": [
+      680,
+      413
+    ],
+    "output_size": [
+      2040,
+      1239
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/viviendas-000.jpg",
+    "output": "img/hd/viviendas-000.webp",
+    "original_size": [
+      680,
+      398
+    ],
+    "output_size": [
+      2040,
+      1194
+    ],
+    "scale": 3,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  },
+  {
+    "source": "img/segundo-anillo-sur-original.webp",
+    "output": "img/hd/segundo-anillo-sur.webp",
+    "original_size": [
+      823,
+      493
+    ],
+    "output_size": [
+      1646,
+      986
+    ],
+    "scale": 2,
+    "method": "Lanczos + soft unsharp mask; no generative AI"
+  }
+]
