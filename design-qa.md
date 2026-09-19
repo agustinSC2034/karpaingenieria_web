@@ -65,3 +65,11 @@ No quedan diferencias P0/P1/P2 detectadas dentro del alcance acordado. La recepc
 - Se mantiene la composición abierta con separadores finos: dos columnas desktop y una mobile. Esta ampliación de contenido responde al nuevo requisito del usuario y no estaba en el mockup inicial.
 - Revisión posterior en 1440, 768, 390 y 320 px: sin desbordamiento horizontal; nueve divisiones presentes, contenido de fibra legible y consola sin errores ni avisos. Capturas adicionales: `design/preview/divisiones-desktop.png` y `design/preview/fibra-optica-mobile.png`.
 - Compilación y cuatro pruebas del runtime nuevamente correctas tras el cambio.
+
+## Revisión posterior: fotos IA y apartado destacado de Fibra óptica
+
+Esta revisión reemplaza las decisiones anteriores sobre fotografía y división de fibra. Por pedido del usuario se incorporaron siete regeneraciones basadas en las originales y una imagen ilustrativa de fibra óptica. No se promete identidad técnica ni detalle recuperado: se conservan las originales y la trazabilidad en design/generated-images.json.
+
+Fibra óptica ahora tiene sección propia en azul, imagen, CTA y datos del antecedente de General Roca. Las otras ocho divisiones muestran títulos con descripciones desplegables. Se conserva la tipografía y composición general aprobadas; la nueva sección y las fotografías son cambios deliberadamente solicitados.
+
+Se verificaron acceso desde el menú desktop/mobile, cierre del menú al navegar, enlace a contacto y apertura de una división. Sin desbordamiento horizontal a 320, 390, 768, 1024 y 1440 px. Se corrigió la altura de la imagen de fibra para respetar el encuadre responsive. Capturas actualizadas en design/preview/fibra-destacada-desktop.png y fibra-destacada-mobile.png.

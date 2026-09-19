@@ -24,3 +24,11 @@ La tercera imagen nueva es un collage con crédito a XIX Ingeniería. Se conserv
 Las conversiones WebP preservan el contenido fotográfico. Tras probar GPT Image, se rechazaron los candidatos que reconstruían detalles técnicos y no se incorporaron al sitio. El usuario eligió expresamente reescalado convencional sin inventar detalles.
 
 `scripts/prepare-photos.py` aplica Lanczos 2×/3× y nitidez suave a las fotografías de hasta 1200 px, sin modificar los originales ni alterar geometría, contenido o color. Las copias están en `img/hd/`, con un manifiesto de dimensiones y procedencia. Los recursos visibles del sitio utilizan esas copias optimizadas. Este proceso mejora su presentación, pero no recupera detalle real ausente del original.
+
+## Actualización: imágenes generadas por pedido del usuario
+
+El pedido posterior reemplaza la restricción de reescalado convencional: se utiliza GPT Image integrado para regenerar las siete fotografías mostradas en la web sobre sus originales. Las versiones generadas conservan la composición general, pero modifican detalles finos y no deben utilizarse como evidencia técnica exacta de equipos u obras. Los originales y las versiones convencionales permanecen disponibles.
+
+Correspondencias: hero = izaje-de-caneria.png; planta = erp-002.jpg; flota = IMG-20191108-WA0041.jpg; obra = segundo-anillo-sur-original.webp; vertical/horizontal = equipo-industrial-vertical/horizontal.png; tiendetubos = tiendetubos-en-obra.png. Fibra es una nueva imagen ilustrativa de material, no atribuida a una obra.
+
+PNG generados: img/generated/. Copias WebP: public/images/ai/. Prompts completos y método: design/generated-images.json. Las dimensiones reales oscilan entre 1254 y 1673 px de lado mayor; no se afirma entrega 2K/4K ni recuperación exacta de detalle perdido.

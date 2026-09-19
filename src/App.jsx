@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, List, X } from '@phosphor-icons/react';
 import { divisions, equipment, projects, services } from './content';
 
-const links = [['Empresa', '#empresa'], ['Divisiones', '#divisiones'], ['Obras', '#obras'], ['Equipos', '#equipos'], ['Contacto', '#contacto']];
+const links = [['Empresa', '#empresa'], ['Divisiones', '#divisiones'], ['Fibra óptica', '#fibra-optica'], ['Obras', '#obras'], ['Equipos', '#equipos'], ['Contacto', '#contacto']];
 const Arrow = () => <ArrowRight size={24} weight="light" aria-hidden="true" />;
 
 function Brand({ footer = false }) {
@@ -45,7 +45,7 @@ function Hero() {
         <a className="button" href="#obras">Conocer nuestras obras <Arrow /></a>
       </div>
     </div>
-    <img className="hero__image" src="/images/izaje-de-caneria.webp" alt="Tiendetubos y personal de Karpa durante una maniobra de izaje de cañería" width="1600" height="1200" fetchPriority="high" />
+    <img className="hero__image" src="/images/ai/hero.webp" alt="Tiendetubos y personal de Karpa durante una maniobra de izaje de cañería" width="1600" height="1200" fetchPriority="high" />
   </section>;
 }
 
@@ -60,29 +60,49 @@ function Company() {
           <div className="disclosure__body">
             <p>{service.description}</p>
             {service.title === 'Servicios especializados' && <div className="workshop-photos">
-              <img src="/images/equipo-industrial-vertical.webp" alt="Equipo industrial vertical en taller" width="455" height="607" loading="lazy" />
-              <img src="/images/equipo-industrial-horizontal.webp" alt="Equipo industrial horizontal en taller" width="455" height="607" loading="lazy" />
+              <img src="/images/ai/vertical.webp" alt="Equipo industrial vertical en taller" width="455" height="607" loading="lazy" />
+              <img src="/images/ai/horizontal.webp" alt="Equipo industrial horizontal en taller" width="455" height="607" loading="lazy" />
             </div>}
             <a className="text-link" href="#contacto">Consultar por este servicio <Arrow /></a>
           </div>
         </details>)}
       </div>
     </div>
-    <img className="company__image" src="/images/planta-reguladora.webp" alt="Instalación industrial con cañerías, válvulas y equipos de regulación" width="680" height="419" loading="lazy" />
+    <img className="company__image" src="/images/ai/planta.webp" alt="Instalación industrial con cañerías, válvulas y equipos de regulación" width="680" height="419" loading="lazy" />
   </section>;
 }
 
 function Divisions() {
   return <section className="divisions container" id="divisiones" aria-labelledby="divisions-title">
     <div className="section-heading"><h2 id="divisions-title">Divisiones de obra.</h2></div>
-    <p className="divisions__intro">Ingeniería, provisión y construcción para infraestructura energética, industrial y de comunicaciones.</p>
+    <p className="divisions__intro">De la ingeniería a la ejecución.</p>
     <div className="divisions__list">
-      {divisions.map(division => <article className="division" key={division.id} id={division.id}>
-        <h3>{division.title}</h3>
-        <p>{division.description}</p>
-      </article>)}
+      {divisions.filter(division => division.id !== 'fibra-optica').map(division => <details className="division disclosure" key={division.id} id={division.id}>
+        <summary><h3>{division.title}</h3><Arrow /></summary>
+        <div className="disclosure__body"><p>{division.description}</p></div>
+      </details>)}
     </div>
-    <a className="text-link" href="#contacto">Hablemos de tu obra <Arrow /></a>
+    <a className="text-link" href="#fibra-optica">Conocer la división de Fibra óptica <Arrow /></a>
+  </section>;
+}
+
+function FiberOptics() {
+  return <section className="fiber" id="fibra-optica" aria-labelledby="fiber-title">
+    <div className="container fiber__layout">
+      <div className="fiber__copy">
+        <h2 id="fiber-title">Fibra óptica.<br />Infraestructura para conectar.</h2>
+        <p>Canalización con tritubo y tendido de fibra para proyectos de infraestructura.</p>
+        <a className="button" href="#contacto">Consultar por fibra óptica <Arrow /></a>
+      </div>
+      <figure className="fiber__visual">
+        <img src="/images/ai/fibra.webp" alt="Detalle ilustrativo de un cable de fibra óptica" width="1536" height="1024" loading="lazy" />
+        <figcaption>Imagen ilustrativa.</figcaption>
+      </figure>
+      <div className="fiber__experience">
+        <div><h3>Experiencia en General Roca.</h3><p>Acueducto principal · Central Térmica Roca</p></div>
+        <dl><div><dt>Tritubo instalado</dt><dd>17.000 <span>m</span></dd></div><div><dt>Fibra óptica tendida</dt><dd>20.000 <span>m</span></dd></div></dl>
+      </div>
+    </div>
   </section>;
 }
 
@@ -94,7 +114,7 @@ function Projects() {
       <button className="text-link" type="button" aria-expanded={all} aria-controls="project-list" onClick={() => setAll(!all)}>{all ? 'Ver menos obras' : 'Ver antecedentes'}<Arrow /></button>
     </div>
     <article className="featured-project">
-      <img src="/images/segundo-anillo-sur.webp" alt="Bajada de cañería en la obra Segundo Anillo Sur para Metrogas" width="823" height="493" loading="lazy" />
+      <img src="/images/ai/obra.webp" alt="Bajada de cañería en la obra Segundo Anillo Sur para Metrogas" width="823" height="493" loading="lazy" />
       <div className="featured-project__copy">
         <h3>Segundo Anillo Sur</h3>
         <p>San Vicente, Buenos Aires<br />Metrogas</p>
@@ -126,14 +146,14 @@ function Equipment() {
         <p>Equipos de excavación, izaje, soldadura y transporte para acompañar cada etapa de ejecución.</p>
         <button className="button" onClick={show} type="button" aria-haspopup="dialog">Conocer nuestros equipos <Arrow /></button>
       </div>
-      <img src="/images/equipos-propios.webp" width="680" height="382" alt="Excavadoras de Karpa sobre un carretón de transporte" loading="lazy" />
+      <img src="/images/ai/flota.webp" width="680" height="382" alt="Excavadoras de Karpa sobre un carretón de transporte" loading="lazy" />
     </section>
     <dialog ref={dialog} className="equipment-dialog" aria-labelledby="dialog-title" onClick={event => { if (event.target === event.currentTarget) dialog.current.close(); }}>
       <div className="equipment-dialog__inner">
         <button className="dialog-close" type="button" onClick={() => dialog.current.close()} aria-label="Cerrar detalle de equipos" autoFocus><X size={28} weight="light" /></button>
         <h2 id="dialog-title">Equipos propios.</h2>
         <p>Recursos para acompañar cada etapa de ejecución.</p>
-        <img className="equipment-dialog__photo" src="/images/tiendetubos-en-obra.webp" width="900" height="900" alt="Tiendetubos trabajando sobre una excavación" loading="lazy" />
+        <img className="equipment-dialog__photo" src="/images/ai/tiendetubos.webp" width="900" height="900" alt="Tiendetubos trabajando sobre una excavación" loading="lazy" />
         <dl>{equipment.map(([title, text]) => <div key={title}><dt>{title}</dt><dd>{text}</dd></div>)}</dl>
         <a href="#contacto" className="button" onClick={() => dialog.current.close()}>Consultar disponibilidad <Arrow /></a>
       </div>
@@ -163,7 +183,7 @@ export function App() {
   return <div id="inicio">
     <a className="skip-link" href="#contenido">Ir al contenido</a>
     <Header />
-    <main id="contenido"><Hero /><Company /><Divisions /><Projects /><Equipment /><Contact /></main>
+    <main id="contenido"><Hero /><Company /><Divisions /><FiberOptics /><Projects /><Equipment /><Contact /></main>
     <footer className="site-footer container"><Brand footer /><p>Ingeniería, Construcciones y Servicios</p></footer>
   </div>;
 }

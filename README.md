@@ -16,7 +16,8 @@ npm run dev -- --host 127.0.0.1 --port 4173
 - Inicio, empresa, divisiones de obra, servicios especializados, antecedentes, equipos y contacto.
 - Nueve divisiones visibles, incluida Fibra óptica con alcance de canalización y tendido respaldado por los antecedentes aportados.
 - Navegación responsive y teclado; especialidades y obras desplegables; detalle de equipos con diálogo accesible.
-- Fotografías reales proporcionadas por el usuario. No se utilizan los renders de GPT Image como fotografías del sitio.
+- Fotografías regeneradas con GPT Image sobre las originales aportadas por el usuario, por pedido actualizado. No son reproducciones técnicas exactas. Originales preservadas en `img/`, versiones generadas en `img/generated/` y copias web en `public/images/ai/`.
+- Fibra óptica tiene una sección destacada con acceso propio en el menú, imagen ilustrativa y antecedente de General Roca. Las demás divisiones presentan detalles desplegables para reducir texto simultáneo.
 - Formulario con validación local: **envío pendiente por decisión del usuario**, hasta definir correo y servicio de recepción. No transmite ni almacena datos y nunca simula una confirmación de envío.
 
 ## Contenido y recursos

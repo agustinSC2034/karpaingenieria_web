@@ -3,10 +3,11 @@
 ## Decisiones aprobadas para Karpa
 
 - Seguir los mockups completos de `design/mockups/`: fondo blanco, azul profundo, tipografía sans serif firme, secciones abiertas y sin tarjetas ni etiquetas decorativas.
-- Usar fotografías originales de Karpa. Los intentos de mejora generativa se rechazaron porque alteraban detalles. El usuario eligió reescalado convencional con nitidez suave, sin inventar contenido. Preservar siempre originales en `img/`.
+- Actualización del usuario: regenerar las fotografías deterioradas con IA usando las originales como base, manteniendo escena y aspecto natural. Conservar siempre originales en `img/` y distinguir versiones generadas de originales en la documentación.
 - La conexión de envío del formulario queda pendiente por pedido explícito del usuario: aún no definió el correo destinatario. No simular envíos exitosos.
 - Las nuevas fotos no tienen identificación confirmada de proyecto/cliente; no atribuirles nombres por inferencia.
 - Mostrar las divisiones de obra individualmente, incluyendo Fibra óptica como división propia. Basar el alcance técnico en los documentos aportados; no atribuir servicios de telecomunicaciones no documentados.
+- Fibra óptica debe tener un apartado destacado y acceso desde el menú. Evitar bloques largos de texto: mostrar síntesis y detalles desplegables para una lectura ágil.
 
 Run the local server yourself and open the preview in the browser available to this environment. Do not give the user server-start instructions when you can run it.
 

@@ -1,0 +1,58 @@
+[
+  {
+    "key": "planta",
+    "prompt": "Edit target: attached original Karpa industrial photograph. Generate a high-definition photographic restoration of this EXACT scene for a sober corporate engineering website. Preserve original camera angle, composition, count and position of equipment, workers, piping, cables, wheels and structures; preserve machinery geometry and existing colors. Improve soft blurred low resolution into clean natural realistic photographic clarity, restrained daylight, neutral color grading, believable material texture. Do not redesign machinery, add/remove objects, invent labels or introduce dramatic lighting, oversharpened halos, glossy CGI or artificial textures. No overlays or watermarks. Remove only any clipped brochure caption at outermost edge if present. Landscape 2048px wide or higher, original aspect ratio. This is a faithful image edit, not an alternate scene.",
+    "output": "public/images/ai/planta.webp",
+    "tool": "built-in image_gen",
+    "type": "AI reconstruction based on original photograph"
+  },
+  {
+    "key": "flota",
+    "prompt": "Edit target: attached original Karpa industrial photograph. Generate a high-definition photographic restoration of this EXACT scene for a sober corporate engineering website. Preserve original camera angle, composition, count and position of equipment, workers, piping, cables, wheels and structures; preserve machinery geometry and existing colors. Improve soft blurred low resolution into clean natural realistic photographic clarity, restrained daylight, neutral color grading, believable material texture. Do not redesign machinery, add/remove objects, invent labels or introduce dramatic lighting, oversharpened halos, glossy CGI or artificial textures. No overlays or watermarks. Remove only any clipped brochure caption at outermost edge if present. Landscape 2048px wide or higher, original aspect ratio. This is a faithful image edit, not an alternate scene.",
+    "output": "public/images/ai/flota.webp",
+    "tool": "built-in image_gen",
+    "type": "AI reconstruction based on original photograph"
+  },
+  {
+    "key": "obra",
+    "prompt": "Edit target: attached original Karpa industrial photograph. Generate a high-definition photographic restoration of this EXACT scene for a sober corporate engineering website. Preserve original camera angle, composition, count and position of equipment, workers, piping, cables, wheels and structures; preserve machinery geometry and existing colors. Improve soft blurred low resolution into clean natural realistic photographic clarity, restrained daylight, neutral color grading, believable material texture. Do not redesign machinery, add/remove objects, invent labels or introduce dramatic lighting, oversharpened halos, glossy CGI or artificial textures. No overlays or watermarks. Remove only any clipped brochure caption at outermost edge if present. Landscape 2048px wide or higher, original aspect ratio. This is a faithful image edit, not an alternate scene.",
+    "output": "public/images/ai/obra.webp",
+    "tool": "built-in image_gen",
+    "type": "AI reconstruction based on original photograph"
+  },
+  {
+    "key": "hero",
+    "prompt": "Use case: precise-object-edit. Edit the supplied original photo for Karpa corporate engineering website. Faithful high-definition photographic restoration, natural documentary realism. Keep exact original scene, viewpoint, framing, machinery geometry, all workers and their poses, pipe routes, bolts, supports, cables, tools, original colors and building structures unchanged. Enhance clarity, exposure and photographic texture to a crisp natural camera image, without crunchy sharpening or CGI. Do not add or remove equipment or redesign anything; no invented writing, no decorative content. Original aspect ratio, at least 2048px longest edge. Preserve every visible object and technical configuration; improve photographic finish only.",
+    "output": "public/images/ai/hero.webp",
+    "tool": "built-in image_gen",
+    "type": "AI reconstruction based on original photograph"
+  },
+  {
+    "key": "vertical",
+    "prompt": "Use case: precise-object-edit. Edit the supplied original photo for Karpa corporate engineering website. Faithful high-definition photographic restoration, natural documentary realism. Keep exact original scene, viewpoint, framing, machinery geometry, all workers and their poses, pipe routes, bolts, supports, cables, tools, original colors and building structures unchanged. Enhance clarity, exposure and photographic texture to a crisp natural camera image, without crunchy sharpening or CGI. Do not add or remove equipment or redesign anything; no invented writing, no decorative content. Original aspect ratio, at least 2048px longest edge. Preserve every visible object and technical configuration; improve photographic finish only.",
+    "output": "public/images/ai/vertical.webp",
+    "tool": "built-in image_gen",
+    "type": "AI reconstruction based on original photograph"
+  },
+  {
+    "key": "horizontal",
+    "prompt": "Use case: precise-object-edit. Edit the supplied original photo for Karpa corporate engineering website. Faithful high-definition photographic restoration, natural documentary realism. Keep exact original scene, viewpoint, framing, machinery geometry, all workers and their poses, pipe routes, bolts, supports, cables, tools, original colors and building structures unchanged. Enhance clarity, exposure and photographic texture to a crisp natural camera image, without crunchy sharpening or CGI. Do not add or remove equipment or redesign anything; no invented writing, no decorative content. Original aspect ratio, at least 2048px longest edge. Preserve every visible object and technical configuration; improve photographic finish only.",
+    "output": "public/images/ai/horizontal.webp",
+    "tool": "built-in image_gen",
+    "type": "AI reconstruction based on original photograph"
+  },
+  {
+    "key": "tiendetubos",
+    "prompt": "Use case: precise-object-edit. Edit the supplied original photo for Karpa corporate engineering website. Faithful high-definition photographic restoration, natural documentary realism. Keep exact original scene, viewpoint, framing, machinery geometry, all workers and their poses, pipe routes, bolts, supports, cables, tools, original colors and building structures unchanged. Enhance clarity, exposure and photographic texture to a crisp natural camera image, without crunchy sharpening or CGI. Do not add or remove equipment or redesign anything; no invented writing, no decorative content. Original aspect ratio, at least 2048px longest edge. Preserve every visible object and technical configuration; improve photographic finish only.",
+    "output": "public/images/ai/tiendetubos.webp",
+    "tool": "built-in image_gen",
+    "type": "AI reconstruction based on original photograph"
+  },
+  {
+    "key": "fibra",
+    "prompt": "Photorealistic editorial macro photograph for a sober industrial engineering corporate website fiber optic division. Close detail of the cross section of a black fiber optic cable with fine colored internal fibers emerging gently, lying on a neutral pale gray work surface. Clean precise physical material, realistic optical glass fibers and protective sheath, natural soft daylight, restrained navy/gray palette with subtle original fiber colors. No neon glow, no sci-fi, no diagram, no labels, no text, no people, no logos. Horizontal 3:2 composition 2048px wide, cable occupies right two thirds, tactile natural photographic look. Generic illustrative material photograph, not a specific company project.",
+    "output": "public/images/ai/fibra.webp",
+    "tool": "built-in image_gen",
+    "type": "generated illustration"
+  }
+]
