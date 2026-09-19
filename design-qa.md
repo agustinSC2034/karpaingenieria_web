@@ -91,3 +91,6 @@ Actualización de acabado: el usuario pidió que la escena de fibra se vea menos
 
 Clientes: seis logos oficiales alojados localmente, carrusel manual con flechas, desplazamiento táctil y teclado (flechas, Inicio y Fin). Controles deshabilitados en los extremos y movimiento reducido respetado. Verificado en 1440, 390 y 320 px sin desbordamiento horizontal; los seis recursos cargan correctamente. Generación Mediterránea se identifica con la marca oficial Grupo Albanesi y su nombre debajo. Fuentes en design/client-logo-sources.json.
 Compilación de producción y cuatro pruebas del runtime aprobadas en esta revisión.
+
+Título principal actualizado a la denominación corporativa del brochure Presentación Karpa (páginas 2 y 3). Eliminado el epígrafe Imagen ilustrativa. Carrusel con avance cada cuatro segundos, pausa explícita, suspensión al interactuar, fuera de vista y en pestaña oculta; inicia pausado con preferencia de movimiento reducido.
+Verificación: avance automático observado sin interacción, botón de pausa operativo, título revisado a 1440 y 390 px y sin desbordes a 320 px. Compilación de producción aprobada.

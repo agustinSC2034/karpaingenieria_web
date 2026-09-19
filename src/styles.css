@@ -1043,3 +1043,9 @@ h3 {
   .client-logo img { height:65px }
   .client-logo span { font-size:10px }
 }
+
+@media (max-width:480px) {
+  .clients__heading { flex-wrap:wrap }
+  .clients__heading h2 { flex-basis:100% }
+  .clients__controls { margin-left:auto }
+}
