@@ -41,7 +41,7 @@ function Header() {
 function Hero() {
   return <section className="hero" aria-labelledby="hero-title">
     <div className="hero__intro container">
-      <h1 id="hero-title">Ingeniería,<br />construcciones<br />y servicios.</h1>
+      <h1 id="hero-title">Ingeniería,<br />construcciones<br />y servicios</h1>
       <div className="hero__copy">
         <p>Construimos infraestructura energética. Integramos ingeniería, construcción y servicios especializados.</p>
         <a className="button" href="#obras">Conocer nuestras obras <Arrow /></a>
@@ -54,7 +54,7 @@ function Hero() {
 function Company() {
   return <section className="company container section-grid" id="empresa" aria-labelledby="company-title">
     <div>
-      <h2 id="company-title">Experiencia en<br className="desktop-break" /> infraestructura energética.</h2>
+      <h2 id="company-title">Experiencia en<br className="desktop-break" /> infraestructura energética</h2>
       <p className="company__intro">Más de 40 años construyendo infraestructura, con sede en Bahía Blanca y obras en Argentina y Uruguay.</p>
       <div className="services" id="especialidades">
         {services.map(service => <details className="disclosure" key={service.title}>
@@ -83,7 +83,7 @@ function Divisions() {
     return () => media.removeEventListener('change', change);
   }, []);
   return <section className="divisions container" id="divisiones" aria-labelledby="divisions-title">
-    <div className="section-heading"><h2 id="divisions-title">Divisiones de obra.</h2></div>
+    <div className="section-heading"><h2 id="divisions-title">Divisiones de obra</h2></div>
     <p className="divisions__intro">De la ingeniería a la ejecución.</p>
     <div className="divisions__list">
       {divisions.filter(division => division.id !== 'fibra-optica').map(division => desktop ? <article className="division division--expanded" key={division.id} id={division.id}>
@@ -100,7 +100,7 @@ function FiberOptics() {
   return <section className="fiber" id="fibra-optica" aria-labelledby="fiber-title">
     <div className="container fiber__layout">
       <div className="fiber__copy">
-        <h2 id="fiber-title">Fibra óptica.<br />Infraestructura para conectar.</h2>
+        <h2 id="fiber-title">Fibra óptica<br />Infraestructura para conectar</h2>
         <p>Canalización con tritubo y tendido de fibra para proyectos de infraestructura.</p>
         <p>Integramos las obras civiles y los cruces especiales que acompañan al tendido, con experiencia en proyectos de gran extensión.</p>
       </div>
@@ -108,7 +108,7 @@ function FiberOptics() {
         <img src={asset('/images/ai/fibra-obra-v3.webp')} alt="Cuadrilla instalando canalizaciones de fibra óptica en una obra de gran escala" width="1536" height="1024" loading="lazy" />
       </figure>
       <div className="fiber__experience">
-        <div><h3>Experiencia en General Roca.</h3><p>Acueducto principal · Central Térmica Roca</p></div>
+        <div><h3>Experiencia en General Roca</h3><p>Acueducto principal · Central Térmica Roca</p></div>
         <dl><div><dt>Tritubo instalado</dt><dd>17.000 <span>m</span></dd></div><div><dt>Fibra óptica tendida</dt><dd>20.000 <span>m</span></dd></div></dl>
       </div>
     </div>
@@ -139,7 +139,7 @@ function Projects() {
   const moreProjects = projects.filter(project => !featured.some(item => item.title === project.title));
   return <section className="projects container" id="obras" aria-labelledby="projects-title">
     <div className="section-heading">
-      <h2 id="projects-title">Nuestra experiencia, en obra.</h2>
+      <h2 id="projects-title">Nuestra experiencia en obra</h2>
       <p>Gas, energía e infraestructura.</p>
     </div>
     <div className="project-stories">
@@ -174,7 +174,7 @@ function Equipment() {
   return <>
     <section className="equipment container" id="equipos" aria-labelledby="equipment-title">
       <div className="equipment__copy">
-        <h2 id="equipment-title">Equipos propios.<br />Capacidad en obra.</h2>
+        <h2 id="equipment-title">Equipos propios<br />Capacidad en obra</h2>
         <p>Equipos de excavación, izaje, soldadura y transporte para acompañar cada etapa de ejecución.</p>
         <ul className="equipment__capabilities"><li>Excavación y movimiento de suelos</li><li>Izaje, montaje y transporte</li><li>Soldadura, cruces y servicios de obra</li></ul>
         <button className="button" onClick={show} type="button" aria-haspopup="dialog">Conocer nuestros equipos <Arrow /></button>
@@ -184,7 +184,7 @@ function Equipment() {
     <dialog ref={dialog} className="equipment-dialog" aria-labelledby="dialog-title" onClick={event => { if (event.target === event.currentTarget) dialog.current.close(); }}>
       <div className="equipment-dialog__inner">
         <button className="dialog-close" type="button" onClick={() => dialog.current.close()} aria-label="Cerrar detalle de equipos" autoFocus><X size={28} weight="light" /></button>
-        <h2 id="dialog-title">Equipos propios.</h2>
+        <h2 id="dialog-title">Equipos propios</h2>
         <p>Recursos para acompañar cada etapa de ejecución.</p>
         <img className="equipment-dialog__photo" src={asset('/images/ai/tiendetubos.webp')} width="900" height="900" alt="Tiendetubos trabajando sobre una excavación" loading="lazy" />
         <dl>{equipment.map(([title, text]) => <div key={title}><dt>{title}</dt><dd>{text}</dd></div>)}</dl>
@@ -204,7 +204,7 @@ function Clients() {
   ];
   return <section className="clients container" aria-labelledby="clients-title">
     <div className="clients__heading">
-      <h2 id="clients-title">Empresas con las que trabajamos.</h2>
+      <h2 id="clients-title">Empresas con las que trabajamos</h2>
     </div>
     <div className="clients__viewport" aria-label="Empresas que confiaron en Karpa">
       <ul className="clients__track">
@@ -222,7 +222,7 @@ function Contact() {
   const submit = event => { event.preventDefault(); setNotice(true); };
   return <section className="contact container section-grid" id="contacto" aria-labelledby="contact-title">
     <div>
-      <h2 id="contact-title">Hablemos de tu<br />próximo proyecto.</h2>
+      <h2 id="contact-title">Hablemos de tu<br />próximo proyecto</h2>
       <address>Río Negro 1002<br />Bahía Blanca, Buenos Aires<br /><a href="tel:+542914552263">0291 455-2263</a></address>
     </div>
     <form className="contact-form" onSubmit={submit}>
