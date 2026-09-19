@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, List, X } from '@phosphor-icons/react';
 import { divisions, equipment, projects, services } from './content';
 
-const links = [['Empresa', '#empresa'], ['Divisiones', '#divisiones'], ['Fibra óptica', '#fibra-optica'], ['Obras', '#obras'], ['Equipos', '#equipos'], ['Contacto', '#contacto']];
+const links = [['Empresa', '#empresa'], ['Fibra óptica', '#fibra-optica'], ['Divisiones', '#divisiones'], ['Obras', '#obras'], ['Equipos', '#equipos'], ['Contacto', '#contacto']];
 const Arrow = () => <ArrowRight size={24} weight="light" aria-hidden="true" />;
 
 function Brand({ footer = false }) {
   return <a className={`brand ${footer ? 'brand--footer' : ''}`} href="#inicio" aria-label="Karpa S.A. — Inicio">
-    <img src="/images/karpa-symbol.png" width="64" height="64" alt="" />
+    <img src="/images/ai/logo-v2.webp" width="64" height="64" alt="" />
     <span className="brand__text"><strong>Karpa S.A.</strong><span>Ingeniería, Construcciones y Servicios</span></span>
   </a>;
 }
@@ -73,16 +73,24 @@ function Company() {
 }
 
 function Divisions() {
+  const [desktop, setDesktop] = useState(() => window.matchMedia('(min-width: 761px)').matches);
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 761px)');
+    const change = () => setDesktop(media.matches);
+    media.addEventListener('change', change);
+    return () => media.removeEventListener('change', change);
+  }, []);
   return <section className="divisions container" id="divisiones" aria-labelledby="divisions-title">
     <div className="section-heading"><h2 id="divisions-title">Divisiones de obra.</h2></div>
     <p className="divisions__intro">De la ingeniería a la ejecución.</p>
     <div className="divisions__list">
-      {divisions.filter(division => division.id !== 'fibra-optica').map(division => <details className="division disclosure" key={division.id} id={division.id}>
+      {divisions.filter(division => division.id !== 'fibra-optica').map(division => desktop ? <article className="division division--expanded" key={division.id} id={division.id}>
+        <h3>{division.title}</h3><p>{division.shortDescription || division.description}</p>
+      </article> : <details className="division disclosure" key={division.id} id={division.id}>
         <summary><h3>{division.title}</h3><Arrow /></summary>
         <div className="disclosure__body"><p>{division.description}</p></div>
       </details>)}
     </div>
-    <a className="text-link" href="#fibra-optica">Conocer la división de Fibra óptica <Arrow /></a>
   </section>;
 }
 
@@ -92,10 +100,10 @@ function FiberOptics() {
       <div className="fiber__copy">
         <h2 id="fiber-title">Fibra óptica.<br />Infraestructura para conectar.</h2>
         <p>Canalización con tritubo y tendido de fibra para proyectos de infraestructura.</p>
-        <a className="button" href="#contacto">Consultar por fibra óptica <Arrow /></a>
+        <p>Integramos las obras civiles y los cruces especiales que acompañan al tendido, con experiencia en proyectos de gran extensión.</p>
       </div>
       <figure className="fiber__visual">
-        <img src="/images/ai/fibra.webp" alt="Detalle ilustrativo de un cable de fibra óptica" width="1536" height="1024" loading="lazy" />
+        <img src="/images/ai/fibra-obra-v3.webp" alt="Escena ilustrativa de una cuadrilla instalando canalizaciones de fibra óptica en una obra de gran escala" width="1536" height="1024" loading="lazy" />
         <figcaption>Imagen ilustrativa.</figcaption>
       </figure>
       <div className="fiber__experience">
@@ -107,25 +115,25 @@ function FiberOptics() {
 }
 
 function Projects() {
-  const [all, setAll] = useState(false);
   return <section className="projects container" id="obras" aria-labelledby="projects-title">
     <div className="section-heading">
-      <h2 id="projects-title">Obras que respaldan nuestra experiencia.</h2>
-      <button className="text-link" type="button" aria-expanded={all} aria-controls="project-list" onClick={() => setAll(!all)}>{all ? 'Ver menos obras' : 'Ver antecedentes'}<Arrow /></button>
+      <h2 id="projects-title">Nuestra experiencia, en obra.</h2>
+      <p>Gas, energía e infraestructura.</p>
     </div>
-    <article className="featured-project">
+    <article className="project-showcase">
       <img src="/images/ai/obra.webp" alt="Bajada de cañería en la obra Segundo Anillo Sur para Metrogas" width="823" height="493" loading="lazy" />
-      <div className="featured-project__copy">
+      <div className="project-showcase__caption">
         <h3>Segundo Anillo Sur</h3>
         <p>San Vicente, Buenos Aires<br />Metrogas</p>
         <p>Construcción de ramales de alta presión y obras civiles complementarias.</p>
       </div>
     </article>
-    <div className="project-list" id="project-list">
-      {projects.slice(0, all ? projects.length : 2).map(project => <details className="disclosure project-row" key={project.title}>
-        <summary><h3>{project.title}</h3><span className="project-row__client">{project.client}</span><Arrow /></summary>
-        <div className="disclosure__body"><p className="project-row__location">{project.location}</p><p>{project.description}</p><a href="#contacto" className="text-link">Consultar por una obra similar <Arrow /></a></div>
-      </details>)}
+    <div className="works-index" id="project-list">
+      {projects.map(project => <article className="work-entry" key={project.title}>
+        <p className="work-entry__client">{project.client} · {project.location}</p>
+        <h3>{project.title}</h3>
+        <p>{project.summary}</p>
+      </article>)}
     </div>
   </section>;
 }
@@ -144,6 +152,7 @@ function Equipment() {
       <div className="equipment__copy">
         <h2 id="equipment-title">Equipos propios.<br />Capacidad en obra.</h2>
         <p>Equipos de excavación, izaje, soldadura y transporte para acompañar cada etapa de ejecución.</p>
+        <ul className="equipment__capabilities"><li>Excavación y movimiento de suelos</li><li>Izaje, montaje y transporte</li><li>Soldadura, cruces y servicios de obra</li></ul>
         <button className="button" onClick={show} type="button" aria-haspopup="dialog">Conocer nuestros equipos <Arrow /></button>
       </div>
       <img src="/images/ai/flota.webp" width="680" height="382" alt="Excavadoras de Karpa sobre un carretón de transporte" loading="lazy" />
@@ -155,10 +164,16 @@ function Equipment() {
         <p>Recursos para acompañar cada etapa de ejecución.</p>
         <img className="equipment-dialog__photo" src="/images/ai/tiendetubos.webp" width="900" height="900" alt="Tiendetubos trabajando sobre una excavación" loading="lazy" />
         <dl>{equipment.map(([title, text]) => <div key={title}><dt>{title}</dt><dd>{text}</dd></div>)}</dl>
-        <a href="#contacto" className="button" onClick={() => dialog.current.close()}>Consultar disponibilidad <Arrow /></a>
       </div>
     </dialog>
   </>;
+}
+
+function Clients() {
+  return <section className="clients container" aria-labelledby="clients-title">
+    <h2 id="clients-title">Empresas con las que trabajamos.</h2>
+    <ul>{['Metrogas', 'TGS', 'Camuzzi', 'BAGSA', 'Generación Mediterránea', 'Central Térmica Roca'].map(client => <li key={client}>{client}</li>)}</ul>
+  </section>;
 }
 
 function Contact() {
@@ -180,10 +195,28 @@ function Contact() {
 }
 
 export function App() {
+  useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (reduced.matches || !('IntersectionObserver' in window)) return;
+    const animations = new Set();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const animation = entry.target.animate([{ opacity: 0.65, transform: 'translateY(18px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 650, easing: 'cubic-bezier(.2,.7,.3,1)' });
+        animations.add(animation);
+        animation.onfinish = () => animations.delete(animation);
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.company,.fiber__copy,.fiber__visual,.divisions,.project-showcase,.work-entry,.equipment,.clients,.contact').forEach(element => observer.observe(element));
+    const stop = () => { if (reduced.matches) { observer.disconnect(); animations.forEach(animation => animation.cancel()); } };
+    reduced.addEventListener('change', stop);
+    return () => { observer.disconnect(); animations.forEach(animation => animation.cancel()); reduced.removeEventListener('change', stop); };
+  }, []);
   return <div id="inicio">
     <a className="skip-link" href="#contenido">Ir al contenido</a>
     <Header />
-    <main id="contenido"><Hero /><Company /><Divisions /><FiberOptics /><Projects /><Equipment /><Contact /></main>
+    <main id="contenido"><Hero /><Company /><FiberOptics /><Divisions /><Projects /><Equipment /><Clients /><Contact /></main>
     <footer className="site-footer container"><Brand footer /><p>Ingeniería, Construcciones y Servicios</p></footer>
   </div>;
 }

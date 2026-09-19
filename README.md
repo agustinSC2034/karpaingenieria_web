@@ -35,3 +35,7 @@ Los originales están en `img/`; las copias optimizadas y los recursos extraído
 No se configuraron estadísticas, cookies de seguimiento ni servicios externos de formulario.
 
 La actualización de la presentación corporativa mencionada en el pedido original es un entregable separado y permanece pendiente.
+
+## Ajuste de composición
+
+Fibra óptica precede a Divisiones. Las divisiones se leen abiertas en desktop y desplegables en mobile. Los antecedentes son visibles, con imagen panorámica de la obra principal. Equipos incluye capacidades y una franja posterior presenta clientes documentados. Entradas al hacer scroll y despliegues tienen movimiento sutil, desactivado con la preferencia de movimiento reducido.

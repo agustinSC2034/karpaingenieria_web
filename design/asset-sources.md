@@ -32,3 +32,5 @@ El pedido posterior reemplaza la restricción de reescalado convencional: se uti
 Correspondencias: hero = izaje-de-caneria.png; planta = erp-002.jpg; flota = IMG-20191108-WA0041.jpg; obra = segundo-anillo-sur-original.webp; vertical/horizontal = equipo-industrial-vertical/horizontal.png; tiendetubos = tiendetubos-en-obra.png. Fibra es una nueva imagen ilustrativa de material, no atribuida a una obra.
 
 PNG generados: img/generated/. Copias WebP: public/images/ai/. Prompts completos y método: design/generated-images.json. Las dimensiones reales oscilan entre 1254 y 1673 px de lado mayor; no se afirma entrega 2K/4K ni recuperación exacta de detalle perdido.
+
+La escena macro de fibra fue sustituida por fibra-obra-v3.webp, ilustración de tendido rural a gran escala con referencia estética de tiendetubos.png, y acabado fotográfico deliberadamente menos pulido. Logo-v2.webp recrea el emblema enviado por el usuario sobre blanco. Originales generados en img/generated; prompts en design/generated-images-v2.json y design/fibra-photo-finish.json. Ninguna de estas ilustraciones acredita una obra específica.

@@ -979,3 +979,45 @@ h3 {
   .fiber .button { font-size:16px }
   .division summary { min-height:72px }
 }
+
+/* Open work portfolio and responsive division reading. */
+.division--expanded { padding:24px 0 30px }
+.division--expanded h3 { margin-bottom:10px }
+.division--expanded p { font-size:17px; line-height:1.5 }
+.projects .section-heading>p { font-size:18px; max-width:300px }
+.project-showcase { margin-bottom:34px }
+.project-showcase>img { width:100%; height:auto; aspect-ratio:2.35; object-fit:cover; object-position:center 56% }
+.project-showcase__caption { display:grid; grid-template-columns:1.1fr .7fr 1fr; gap:35px; padding:24px 0 }
+.project-showcase__caption h3 { font-size:clamp(27px,2.9vw,42px) }
+.project-showcase__caption p { font-size:18px; line-height:1.5 }
+.works-index { display:grid; grid-template-columns:1fr 1fr; gap:0 6% }
+.work-entry { border-top:1px solid var(--rule); padding:25px 0 30px }
+.work-entry h3 { font-size:clamp(23px,2vw,29px); margin:12px 0 }
+.work-entry p { font-size:17px; line-height:1.5; max-width:550px }
+.work-entry .work-entry__client { font-size:13px; line-height:1.5; letter-spacing:0; color:#4d6381 }
+.equipment__capabilities { list-style:none; padding:0; margin:0 0 28px; font-size:16px; line-height:1.5 }
+.equipment__capabilities li { padding:9px 0; border-bottom:1px solid var(--rule) }
+.clients { padding-block:20px 55px }
+.clients h2 { font-size:clamp(24px,2.5vw,36px); margin-bottom:30px }
+.clients ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:24px 40px }
+.clients li { font-size:clamp(20px,2vw,27px); font-weight:600; letter-spacing:-.035em }
+.fiber__copy p:last-child { margin-bottom:0 }
+@keyframes detail-enter { from { opacity:0; transform:translateY(-5px) } to { opacity:1; transform:translateY(0) } }
+@media (prefers-reduced-motion:no-preference) {
+  details[open]>.disclosure__body { animation:detail-enter .28s ease-out }
+  .equipment-dialog[open] { animation:detail-enter .25s ease-out }
+}
+@media (max-width:760px) {
+  .project-showcase>img { aspect-ratio:1.2 }
+  .project-showcase__caption { grid-template-columns:1fr; gap:12px; padding-block:20px }
+  .project-showcase__caption p { font-size:16px }
+  .works-index { grid-template-columns:1fr }
+  .work-entry { padding-block:22px }
+  .work-entry h3 { font-size:23px }
+  .work-entry p { font-size:16px }
+  .equipment__capabilities { order:3; margin-bottom:22px; font-size:15px }
+  .equipment__copy .button { order:4 }
+  .clients { padding-block:18px 38px }
+  .clients ul { grid-template-columns:1fr 1fr; gap:22px }
+  .clients li { font-size:19px }
+}

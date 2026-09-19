@@ -1,0 +1,14 @@
+[
+  {
+    "key": "logo-v2",
+    "prompt": "Edit the supplied logo. Recreate this EXACT blue beveled three-dimensional square emblem with the exact same white K and right vertical white element and diagonal cut, same perspective, same geometry, same proportions, same blue gradients and relief. Sharpen the blurry edges to clean high resolution. Change ONLY the surrounding gray background to pure white #FFFFFF, without a gray cast. Keep the emblem identical, do not modernize, flatten, redesign, add lettering or change its shapes. Logo occupies 90% of square canvas with tight white margins. White background, high fidelity logo restoration.",
+    "output": "public/images/ai/logo-v2.webp",
+    "tool": "built-in image_gen"
+  },
+  {
+    "key": "fibra-obra-v2",
+    "prompt": "Reference image sets the exact visual aesthetic and type of location: natural Argentine flat rural industrial construction site, excavated brown soil, blue sky, yellow construction machinery. Generate a NEW realistic documentary photograph of LARGE SCALE long-distance fiber optic civil infrastructure construction in this type of location, not FTTH, not domestic installation, not microscopic fiber. Wide horizontal landscape composition: 3 workers wearing helmets, workwear and safety vests at ground level beside a narrow open cable trench on flat ground, working with a large cable drum on a proper cable reel stand and parallel orange HDPE telecom conduits being guided into the trench. Excavator in background, distant flat fields, realistic equipment and scale. No giant gas pipes and no pipelayers lifting cable drums. Subtle natural daylight, sharp photographic texture, matching the reference's blue sky, earth and industrial colors. No futuristic glowing fibers, no logos, no overlays, no text. 3:2 landscape, editorial industrial photograph, illustrative scene not a claim of specific real project.",
+    "output": "public/images/ai/fibra-obra-v2.webp",
+    "tool": "built-in image_gen"
+  }
+]

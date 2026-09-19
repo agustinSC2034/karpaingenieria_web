@@ -73,3 +73,17 @@ Esta revisión reemplaza las decisiones anteriores sobre fotografía y división
 Fibra óptica ahora tiene sección propia en azul, imagen, CTA y datos del antecedente de General Roca. Las otras ocho divisiones muestran títulos con descripciones desplegables. Se conserva la tipografía y composición general aprobadas; la nueva sección y las fotografías son cambios deliberadamente solicitados.
 
 Se verificaron acceso desde el menú desktop/mobile, cierre del menú al navegar, enlace a contacto y apertura de una división. Sin desbordamiento horizontal a 320, 390, 768, 1024 y 1440 px. Se corrigió la altura de la imagen de fibra para respetar el encuadre responsive. Capturas actualizadas en design/preview/fibra-destacada-desktop.png y fibra-destacada-mobile.png.
+
+## Revisión: obras abiertas, divisiones responsive y marca
+
+La última dirección del usuario sustituye el orden y la presentación anteriores: Fibra óptica precede a Divisiones, sin enlaces de conocer/consultar fibra. La escena ilustrativa muestra tendido de canalizaciones en obra de gran escala. Se amplió la explicación sin atribuir servicios no documentados.
+
+Las ocho divisiones restantes tienen textos resumidos siempre visibles en desktop y descripciones completas desplegables en mobile. Los cinco antecedentes y la obra principal se muestran sin ocultarlos: foto panorámica y ficha abierta, seguida del índice de obras.
+
+Se amplió Equipos con tres líneas de capacidades y se retiró Consultar disponibilidad del diálogo. Se agregó una franja de seis clientes basados en los antecedentes visibles, sin logos inventados ni carrusel automático. El emblema se regeneró sobre blanco a partir de la referencia del usuario; se conserva la identidad visual, no se afirma igualdad exacta de píxeles.
+
+Animación de entrada suave mediante IntersectionObserver y Web Animations, sin ocultar contenido por defecto. Despliegues y diálogo con transiciones breves. Movimiento reducido desactiva las animaciones; la implementación también cancela las activas si cambia la preferencia.
+
+Verificación en navegador: orden de secciones, ocho divisiones abiertas en desktop / ocho desplegables en mobile, cinco antecedentes visibles, apertura de un desplegable, apertura y cierre del diálogo de equipos y ausencia del enlace retirado. Compilación correcta.
+
+Actualización de acabado: el usuario pidió que la escena de fibra se vea menos pulida. La versión fibra-obra-v3 aplica suavidad, grano leve y menor contraste/saturación mediante GPT Image; conserva la escena general. Prompts en design/fibra-photo-finish.json. Se verificó además ausencia de desbordamiento en 320, 390, 768 y 1440 px; consola sin errores ni avisos. Cuatro pruebas del runtime correctas.

@@ -1,0 +1,6 @@
+{
+  "prompt": "Edit this exact supplied photograph ONLY at the level of photographic finish. Preserve every subject, worker, pose, equipment, cable reel, trench and composition exactly. It currently looks too perfectly sharp and polished. Make it feel like an ordinary real on-site documentary photograph from a good phone: subtly softer fine detail, very mild optical softness, a little natural fine sensor grain in midtones/shadows, slightly lower microcontrast, mildly less saturated blue sky and orange conduit. Tiny natural photographic imperfections in exposure, but not dirty objects. DO NOT add dirt or objects or change the scene. Not heavily blurred, not vintage, not film scratches, not obvious noise. Still clean usable corporate web photography, just less AI-perfect. Same aspect ratio.",
+  "source": "img/generated/fibra-obra-v2.png",
+  "output": "public/images/ai/fibra-obra-v3.webp",
+  "tool": "built-in image_gen"
+}

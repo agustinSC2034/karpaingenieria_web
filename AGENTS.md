@@ -8,6 +8,9 @@
 - Las nuevas fotos no tienen identificación confirmada de proyecto/cliente; no atribuirles nombres por inferencia.
 - Mostrar las divisiones de obra individualmente, incluyendo Fibra óptica como división propia. Basar el alcance técnico en los documentos aportados; no atribuir servicios de telecomunicaciones no documentados.
 - Fibra óptica debe tener un apartado destacado y acceso desde el menú. Evitar bloques largos de texto: mostrar síntesis y detalles desplegables para una lectura ágil.
+- Fibra óptica va antes de Divisiones: escena de obra de gran escala, no FTTH ni macro de cable. Sin botones de conocer/consultar fibra; sumar explicación breve.
+- Divisiones: descripciones cortas siempre visibles en desktop; conservar descripción completa desplegable en mobile. Obras: antecedentes visibles sin controles que los oculten, foto principal panorámica.
+- Quitar consultar disponibilidad de equipos; mantener el bloque y ampliar sus capacidades. Logo regenerado fiel al emblema, con fondo blanco. Animaciones sutiles con respeto a movimiento reducido.
 
 Run the local server yourself and open the preview in the browser available to this environment. Do not give the user server-start instructions when you can run it.
 
