@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, List, Pause, Play, X } from '@phosphor-icons/react';
+import { ArrowRight, List, X } from '@phosphor-icons/react';
 import { divisions, equipment, projects, services } from './content';
 
 const links = [['Empresa', '#empresa'], ['Fibra óptica', '#fibra-optica'], ['Divisiones', '#divisiones'], ['Obras', '#obras'], ['Equipos', '#equipos'], ['Contacto', '#contacto']];
@@ -103,7 +103,7 @@ function FiberOptics() {
         <p>Integramos las obras civiles y los cruces especiales que acompañan al tendido, con experiencia en proyectos de gran extensión.</p>
       </div>
       <figure className="fiber__visual">
-        <img src="/images/ai/fibra-obra-v3.webp" alt="Escena ilustrativa de una cuadrilla instalando canalizaciones de fibra óptica en una obra de gran escala" width="1536" height="1024" loading="lazy" />
+        <img src="/images/ai/fibra-obra-v3.webp" alt="Cuadrilla instalando canalizaciones de fibra óptica en una obra de gran escala" width="1536" height="1024" loading="lazy" />
       </figure>
       <div className="fiber__experience">
         <div><h3>Experiencia en General Roca.</h3><p>Acueducto principal · Central Térmica Roca</p></div>
@@ -169,10 +169,6 @@ function Equipment() {
 }
 
 function Clients() {
-  const track = useRef(null);
-  const interacting = useRef(false);
-  const [paused, setPaused] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-  const [position, setPosition] = useState({ start: true, end: false });
   const clients = [
     { name: 'Metrogas', logo: 'metrogas.svg' },
     { name: 'TGS', logo: 'tgs.png' },
@@ -181,57 +177,18 @@ function Clients() {
     { name: 'Generación Mediterránea', logo: 'albanesi.png', alt: 'Grupo Albanesi', caption: true },
     { name: 'Central Térmica Roca', logo: 'roca.png' },
   ];
-  useEffect(() => {
-    const element = track.current;
-    const update = () => setPosition({ start: element.scrollLeft <= 2, end: element.scrollLeft + element.clientWidth >= element.scrollWidth - 2 });
-    const resize = new ResizeObserver(update);
-    resize.observe(element);
-    element.addEventListener('scroll', update, { passive: true });
-    update();
-    return () => { resize.disconnect(); element.removeEventListener('scroll', update); };
-  }, []);
-  useEffect(() => {
-    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const change = () => { if (preference.matches) setPaused(true); };
-    preference.addEventListener('change', change);
-    return () => preference.removeEventListener('change', change);
-  }, []);
-  useEffect(() => {
-    if (paused) return;
-    const element = track.current;
-    let visible = false;
-    const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }, { threshold: 0.5 });
-    observer.observe(element);
-    const timer = window.setInterval(() => {
-      if (!visible || document.hidden || interacting.current || element.closest('section').matches(':hover, :focus-within')) return;
-      const end = element.scrollLeft + element.clientWidth >= element.scrollWidth - 2;
-      element.scrollTo({ left: end ? 0 : element.scrollLeft + element.querySelector('li').getBoundingClientRect().width, behavior: 'smooth' });
-    }, 4000);
-    return () => { window.clearInterval(timer); observer.disconnect(); };
-  }, [paused]);
-  const move = direction => {
-    const element = track.current;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    element.scrollBy({ left: direction * element.clientWidth, behavior: reduced ? 'instant' : 'smooth' });
-  };
   return <section className="clients container" aria-labelledby="clients-title">
     <div className="clients__heading">
       <h2 id="clients-title">Empresas con las que trabajamos.</h2>
-      <div className="clients__controls">
-        <button type="button" aria-label={paused ? 'Reanudar carrusel' : 'Pausar carrusel'} onClick={() => setPaused(!paused)}>{paused ? <Play size={20} aria-hidden="true" /> : <Pause size={20} aria-hidden="true" />}</button>
-        <button type="button" aria-label="Clientes anteriores" aria-controls="client-carousel" disabled={position.start} onClick={() => move(-1)}><ArrowLeft size={24} aria-hidden="true" /></button>
-        <button type="button" aria-label="Clientes siguientes" aria-controls="client-carousel" disabled={position.end} onClick={() => move(1)}><Arrow /></button>
-      </div>
     </div>
-    <ul ref={track} id="client-carousel" className="clients__track" tabIndex={0} onPointerDown={() => { interacting.current = true; }} onPointerUp={() => { interacting.current = false; }} onPointerCancel={() => { interacting.current = false; }} onPointerLeave={() => { interacting.current = false; }} aria-label="Logos de clientes. Deslizá o usá las flechas para recorrerlos." onKeyDown={event => {
-      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') { event.preventDefault(); move(event.key === 'ArrowRight' ? 1 : -1); }
-      if (event.key === 'Home' || event.key === 'End') { event.preventDefault(); track.current.scrollTo({ left: event.key === 'Home' ? 0 : track.current.scrollWidth, behavior: 'instant' }); }
-    }}>
-      {clients.map(client => <li key={client.name} className="client-logo">
+    <div className="clients__viewport" aria-label="Empresas que confiaron en Karpa">
+      <ul className="clients__track">
+      {[...clients, ...clients].map((client, index) => <li key={`${client.name}-${index}`} className={`client-logo ${index >= clients.length ? 'client-logo--duplicate' : ''}`} aria-hidden={index >= clients.length ? 'true' : undefined}>
         <img src={`/images/clients/${client.logo}`} alt={client.alt || client.name} width="220" height="100" loading="lazy" />
         {client.caption && <span>{client.name}</span>}
       </li>)}
-    </ul>
+      </ul>
+    </div>
   </section>;
 }
 
