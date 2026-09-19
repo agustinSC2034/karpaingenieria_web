@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRight, List, X } from '@phosphor-icons/react';
+import { ArrowLeft, ArrowRight, List, X } from '@phosphor-icons/react';
 import { divisions, equipment, projects, services } from './content';
 
 const links = [['Empresa', '#empresa'], ['Fibra óptica', '#fibra-optica'], ['Divisiones', '#divisiones'], ['Obras', '#obras'], ['Equipos', '#equipos'], ['Contacto', '#contacto']];
@@ -170,9 +170,47 @@ function Equipment() {
 }
 
 function Clients() {
+  const track = useRef(null);
+  const [position, setPosition] = useState({ start: true, end: false });
+  const clients = [
+    { name: 'Metrogas', logo: 'metrogas.svg' },
+    { name: 'TGS', logo: 'tgs.png' },
+    { name: 'Camuzzi', logo: 'camuzzi.svg' },
+    { name: 'BAGSA', logo: 'bagsa.png' },
+    { name: 'Generación Mediterránea', logo: 'albanesi.png', alt: 'Grupo Albanesi', caption: true },
+    { name: 'Central Térmica Roca', logo: 'roca.png' },
+  ];
+  useEffect(() => {
+    const element = track.current;
+    const update = () => setPosition({ start: element.scrollLeft <= 2, end: element.scrollLeft + element.clientWidth >= element.scrollWidth - 2 });
+    const resize = new ResizeObserver(update);
+    resize.observe(element);
+    element.addEventListener('scroll', update, { passive: true });
+    update();
+    return () => { resize.disconnect(); element.removeEventListener('scroll', update); };
+  }, []);
+  const move = direction => {
+    const element = track.current;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    element.scrollBy({ left: direction * element.clientWidth, behavior: reduced ? 'instant' : 'smooth' });
+  };
   return <section className="clients container" aria-labelledby="clients-title">
-    <h2 id="clients-title">Empresas con las que trabajamos.</h2>
-    <ul>{['Metrogas', 'TGS', 'Camuzzi', 'BAGSA', 'Generación Mediterránea', 'Central Térmica Roca'].map(client => <li key={client}>{client}</li>)}</ul>
+    <div className="clients__heading">
+      <h2 id="clients-title">Empresas con las que trabajamos.</h2>
+      <div className="clients__controls">
+        <button type="button" aria-label="Clientes anteriores" aria-controls="client-carousel" disabled={position.start} onClick={() => move(-1)}><ArrowLeft size={24} aria-hidden="true" /></button>
+        <button type="button" aria-label="Clientes siguientes" aria-controls="client-carousel" disabled={position.end} onClick={() => move(1)}><Arrow /></button>
+      </div>
+    </div>
+    <ul ref={track} id="client-carousel" className="clients__track" tabIndex={0} aria-label="Logos de clientes. Deslizá o usá las flechas para recorrerlos." onKeyDown={event => {
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') { event.preventDefault(); move(event.key === 'ArrowRight' ? 1 : -1); }
+      if (event.key === 'Home' || event.key === 'End') { event.preventDefault(); track.current.scrollTo({ left: event.key === 'Home' ? 0 : track.current.scrollWidth, behavior: 'instant' }); }
+    }}>
+      {clients.map(client => <li key={client.name} className="client-logo">
+        <img src={`/images/clients/${client.logo}`} alt={client.alt || client.name} width="220" height="100" loading="lazy" />
+        {client.caption && <span>{client.name}</span>}
+      </li>)}
+    </ul>
   </section>;
 }
 

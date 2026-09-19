@@ -87,3 +87,7 @@ Animación de entrada suave mediante IntersectionObserver y Web Animations, sin 
 Verificación en navegador: orden de secciones, ocho divisiones abiertas en desktop / ocho desplegables en mobile, cinco antecedentes visibles, apertura de un desplegable, apertura y cierre del diálogo de equipos y ausencia del enlace retirado. Compilación correcta.
 
 Actualización de acabado: el usuario pidió que la escena de fibra se vea menos pulida. La versión fibra-obra-v3 aplica suavidad, grano leve y menor contraste/saturación mediante GPT Image; conserva la escena general. Prompts en design/fibra-photo-finish.json. Se verificó además ausencia de desbordamiento en 320, 390, 768 y 1440 px; consola sin errores ni avisos. Cuatro pruebas del runtime correctas.
+
+
+Clientes: seis logos oficiales alojados localmente, carrusel manual con flechas, desplazamiento táctil y teclado (flechas, Inicio y Fin). Controles deshabilitados en los extremos y movimiento reducido respetado. Verificado en 1440, 390 y 320 px sin desbordamiento horizontal; los seis recursos cargan correctamente. Generación Mediterránea se identifica con la marca oficial Grupo Albanesi y su nombre debajo. Fuentes en design/client-logo-sources.json.
+Compilación de producción y cuatro pruebas del runtime aprobadas en esta revisión.

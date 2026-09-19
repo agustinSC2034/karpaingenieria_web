@@ -1021,3 +1021,25 @@ h3 {
   .clients ul { grid-template-columns:1fr 1fr; gap:22px }
   .clients li { font-size:19px }
 }
+
+.clients__heading { display:flex; justify-content:space-between; align-items:center; gap:24px; margin-bottom:24px }
+.clients__heading h2 { margin:0 }
+.clients__controls { display:flex; gap:8px; flex-shrink:0 }
+.clients__controls button { display:grid; place-items:center; width:46px; height:46px; border:1px solid var(--rule); background:white; transition:background .2s }
+.clients__controls button:hover:not(:disabled) { background:#f1f5f9 }
+.clients__controls button:disabled { opacity:.3; cursor:default }
+.clients ul.clients__track { display:flex; gap:0; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:thin; scrollbar-color:var(--rule) transparent; padding:20px 0 16px; margin:0; list-style:none; overscroll-behavior-x:contain }
+.clients__track:focus-visible { outline:2px solid var(--blue); outline-offset:5px }
+.clients .client-logo { flex:0 0 25%; min-width:0; height:132px; padding:12px 28px; scroll-snap-align:start; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px }
+.client-logo img { width:100%; max-width:220px; height:78px; object-fit:contain }
+.client-logo span { font-size:12px; font-weight:400; letter-spacing:0; text-align:center }
+@media (max-width:1000px) and (min-width:761px) { .clients .client-logo { flex-basis:33.333% } }
+@media (max-width:760px) {
+  .clients__heading { align-items:flex-end; gap:12px }
+  .clients__heading h2 { font-size:25px }
+  .clients__controls { gap:5px }
+  .clients__controls button { width:42px; height:42px }
+  .clients .client-logo { flex-basis:50%; padding:12px 14px; height:116px }
+  .client-logo img { height:65px }
+  .client-logo span { font-size:10px }
+}
