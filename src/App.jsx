@@ -114,25 +114,48 @@ function FiberOptics() {
 }
 
 function Projects() {
+  const featured = [
+    {
+      title: 'Segundo Anillo Sur',
+      client: 'Metrogas',
+      location: 'San Vicente, Buenos Aires',
+      summary: 'Construcción de ramales de alta presión y obras civiles complementarias.',
+      image: '/images/ai/obra.webp',
+      alt: 'Bajada de cañería con equipos de izaje en una obra de gasoducto',
+    },
+    {
+      ...projects.find(project => project.title === 'Central Térmica Ezeiza'),
+      image: '/images/obra-gasoducto.webp',
+      alt: 'Tendido de cañería con equipos de excavación e izaje',
+    },
+    {
+      ...projects.find(project => project.title === 'Acueducto principal de General Roca'),
+      image: '/images/tiendetubos-en-obra.webp',
+      alt: 'Bajada de cañería en una excavación con equipos tiendetubos',
+    },
+  ];
+  const moreProjects = projects.filter(project => !featured.some(item => item.title === project.title));
   return <section className="projects container" id="obras" aria-labelledby="projects-title">
     <div className="section-heading">
       <h2 id="projects-title">Nuestra experiencia, en obra.</h2>
       <p>Gas, energía e infraestructura.</p>
     </div>
-    <article className="project-showcase">
-      <img src="/images/ai/obra.webp" alt="Bajada de cañería en la obra Segundo Anillo Sur para Metrogas" width="823" height="493" loading="lazy" />
-      <div className="project-showcase__caption">
-        <h3>Segundo Anillo Sur</h3>
-        <p>San Vicente, Buenos Aires<br />Metrogas</p>
-        <p>Construcción de ramales de alta presión y obras civiles complementarias.</p>
-      </div>
-    </article>
-    <div className="works-index" id="project-list">
-      {projects.map(project => <article className="work-entry" key={project.title}>
-        <p className="work-entry__client">{project.client} · {project.location}</p>
-        <h3>{project.title}</h3>
-        <p>{project.summary}</p>
+    <div className="project-stories">
+      {featured.map((project, index) => <article className={`project-story ${index === 1 ? 'project-story--reverse' : ''}`} key={project.title}>
+        <img src={project.image} alt={project.alt} width="900" height="540" loading="lazy" />
+        <div className="project-story__copy">
+          <hr aria-hidden="true" />
+          <h3>{project.title}</h3>
+          <p className="project-story__meta">{project.client} · {project.location}</p>
+          <p>{project.summary}</p>
+        </div>
       </article>)}
+    </div>
+    <div className="projects-more" id="project-list">
+      <h3>Más antecedentes</h3>
+      <ul>
+        {moreProjects.map(project => <li key={project.title}>{project.title}</li>)}
+      </ul>
     </div>
   </section>;
 }

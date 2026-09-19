@@ -22,3 +22,4 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 - Clientes: mostrar los logos oficiales en una cinta automática continua, sin botones ni arrastre. Pausar al pasar el puntero y respetar la preferencia de movimiento reducido.
 - Título principal basado en la presentación corporativa: Ingeniería, construcciones y servicios. Retirar el epígrafe visible Imagen ilustrativa.
+- Obras: seguir `design/mockups/obras-editorial-selected.png`: tres proyectos destacados en filas editoriales alternadas y un índice abierto de Más antecedentes al final.

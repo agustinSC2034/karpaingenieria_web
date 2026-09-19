@@ -96,3 +96,38 @@ Revisión final del carrusel: cinta continua de logos sin controles ni arrastre,
 
 Título principal actualizado a la denominación corporativa del brochure Presentación Karpa (páginas 2 y 3). Eliminado el epígrafe Imagen ilustrativa. Carrusel con avance cada cuatro segundos, pausa explícita, suspensión al interactuar, fuera de vista y en pestaña oculta; inicia pausado con preferencia de movimiento reducido.
 Verificación: avance automático observado sin interacción, botón de pausa operativo, título revisado a 1440 y 390 px y sin desbordes a 320 px. Compilación de producción aprobada.
+
+## QA final — Obras editorial
+
+- Source visual truth: `design/mockups/obras-editorial-selected.png`
+- Implementation desktop: `design/qa-obras-desktop.png`
+- Implementation mobile: `design/qa-obras-mobile.png`
+- Side-by-side comparison: `design/qa-obras-comparison.jpg`
+- Viewports: 1536 × 1024 desktop and 390 × 844 mobile; device scale factor 1.
+- Source and desktop capture: 1536 × 1024 px, compared at equal pixel density. Mobile capture: 390 × 844 px.
+- State: sección Obras, contenido cargado, navegación por ancla probada.
+
+**Fidelity surfaces**
+
+- Typography: Inter, pesos, tamaños, interlineado y quiebres reproducen la jerarquía del mock. Los títulos largos conservan una lectura clara en desktop y mobile.
+- Spacing and layout: tres filas editoriales alternadas, reglas finas, espacios abiertos e índice final reproducidos. Mobile apila fotografía y texto sin desbordamiento.
+- Colors and tokens: se mantienen blanco, azul profundo y gris de reglas del sistema actual.
+- Image quality: se usan los tres recursos fotográficos reales que dieron origen al mock, con `object-fit: cover` y puntos de recorte revisados.
+- Copy: clientes, lugares, alcances y los tres títulos de Más antecedentes coinciden con el contenido aprobado.
+
+**Comparison history**
+
+- Primera pasada: P2 — las filas secundarias tenían 310 px de alto y desplazaban el tercer proyecto y el índice respecto del mock.
+- Corrección: filas segunda y tercera reducidas a 250 px en desktop; encabezado sin borde ni padding superior adicional.
+- Evidencia posterior: `design/qa-obras-comparison.jpg`; la jerarquía, alternancia y densidad coinciden. La diferencia residual de posición vertical responde al contexto de desplazamiento de la página y no altera la sección.
+
+No fue necesario un recorte enfocado adicional: títulos, metadatos, imágenes y separadores son legibles en la comparación a resolución completa. La versión mobile se comprobó por separado.
+
+**Checks**
+
+- Tres historias destacadas y tres antecedentes presentes.
+- Sin desbordamiento horizontal a 390 px.
+- Consola sin errores ni advertencias.
+- Compilación de producción y cuatro pruebas del runtime aprobadas.
+
+final result: passed
