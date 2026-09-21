@@ -1,7 +1,7 @@
 export const services = [
   { title: 'Gasoductos y redes', description: 'Construcción de gasoductos, ramales de alta presión y redes de distribución. Tendido de cañerías de acero, PVC y polietileno, con sus obras complementarias.' },
+  { title: 'Fibra óptica', description: 'Canalización con tritubo, tendido de fibra óptica y obras civiles asociadas para proyectos de infraestructura de gran extensión.' },
   { title: 'Obras EPC', description: 'Ingeniería, provisión y construcción de obras de infraestructura: poliductos, redes de incendio, montaje electromecánico, obras civiles y movimiento de suelos.' },
-  { title: 'Servicios especializados', description: 'Cruces especiales, protección catódica, recobertura de cañerías, pruebas hidráulicas y secado, prefabricados de cañerías y alquiler de equipos.' },
 ];
 export const divisions = [
   { id: 'gasoductos', shortDescription: 'Gasoductos, redes de distribución y estaciones de regulación.', title: 'Gasoductos y redes', description: 'Gasoductos, ramales de alta presión, redes de distribución y estaciones de medición y regulación.' },

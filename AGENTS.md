@@ -22,4 +22,6 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 - Clientes: mostrar los logos oficiales en una cinta automática continua, sin botones ni arrastre. Pausar al pasar el puntero y respetar la preferencia de movimiento reducido.
 - Título principal basado en la presentación corporativa: Ingeniería, construcciones y servicios. Retirar el epígrafe visible Imagen ilustrativa.
-- Obras: seguir `design/mockups/obras-editorial-selected.png`: tres proyectos destacados en filas editoriales alternadas y un índice abierto de Más antecedentes al final.
+- La portada debe mostrar Fibra óptica en lugar de Servicios especializados dentro de las capacidades principales. Mantener el título corporativo general.
+- Ordenar las capacidades principales como Gasoductos y redes, Fibra óptica y Obras EPC. En el bloque azul de fibra, destacar el trabajo a gran escala, mostrar canalización y tritubo, tendido, cruces especiales y obras civiles, y dar mayor presencia a la fotografía y a los metros ejecutados. No agregar un enlace adicional en el hero.
+- Qué hacemos: conservar las filas editoriales e imágenes del diseño aprobado, pero comunicar capacidades amplias —obras, mantenimiento, pruebas, verificaciones y certificaciones— en lugar de una muestra corta de proyectos. No mostrar el índice pequeño de Más antecedentes en la portada.

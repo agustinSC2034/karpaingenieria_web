@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, List, X } from '@phosphor-icons/react';
-import { divisions, equipment, projects, services } from './content';
+import { divisions, equipment, services } from './content';
 
 const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
 
-const links = [['Empresa', '#empresa'], ['Fibra óptica', '#fibra-optica'], ['Divisiones', '#divisiones'], ['Obras', '#obras'], ['Equipos', '#equipos'], ['Contacto', '#contacto']];
+const links = [['Empresa', '#empresa'], ['Fibra óptica', '#fibra-optica'], ['Qué hacemos', '#obras'], ['Divisiones', '#divisiones'], ['Equipos', '#equipos'], ['Contacto', '#contacto']];
 const Arrow = () => <ArrowRight size={24} weight="light" aria-hidden="true" />;
 
 function Brand({ footer = false }) {
@@ -43,8 +43,8 @@ function Hero() {
     <div className="hero__intro container">
       <h1 id="hero-title">Ingeniería,<br />construcciones<br />y servicios</h1>
       <div className="hero__copy">
-        <p>Construimos infraestructura energética. Integramos ingeniería, construcción y servicios especializados.</p>
-        <a className="button" href="#obras">Conocer nuestras obras <Arrow /></a>
+        <p>Construimos infraestructura energética. Integramos ingeniería, construcción y fibra óptica.</p>
+        <a className="button" href="#obras">Conocer nuestras capacidades <Arrow /></a>
       </div>
     </div>
     <img className="hero__image" src={asset('/images/ai/hero.webp')} alt="Tiendetubos y personal de Karpa durante una maniobra de izaje de cañería" width="1600" height="1200" fetchPriority="high" />
@@ -61,11 +61,7 @@ function Company() {
           <summary>{service.title}<Arrow /></summary>
           <div className="disclosure__body">
             <p>{service.description}</p>
-            {service.title === 'Servicios especializados' && <div className="workshop-photos">
-              <img src={asset('/images/ai/vertical.webp')} alt="Equipo industrial vertical en taller" width="455" height="607" loading="lazy" />
-              <img src={asset('/images/ai/horizontal.webp')} alt="Equipo industrial horizontal en taller" width="455" height="607" loading="lazy" />
-            </div>}
-            <a className="text-link" href="#contacto">Consultar por este servicio <Arrow /></a>
+            <a className="text-link" href={service.title === 'Fibra óptica' ? '#fibra-optica' : '#contacto'}>{service.title === 'Fibra óptica' ? 'Ver capacidad en fibra óptica' : 'Consultar por este servicio'} <Arrow /></a>
           </div>
         </details>)}
       </div>
@@ -100,9 +96,15 @@ function FiberOptics() {
   return <section className="fiber" id="fibra-optica" aria-labelledby="fiber-title">
     <div className="container fiber__layout">
       <div className="fiber__copy">
-        <h2 id="fiber-title">Fibra óptica<br />Infraestructura para conectar</h2>
+        <h2 id="fiber-title">Fibra óptica<br />para infraestructura de gran escala</h2>
         <p>Canalización con tritubo y tendido de fibra para proyectos de infraestructura.</p>
         <p>Integramos las obras civiles y los cruces especiales que acompañan al tendido, con experiencia en proyectos de gran extensión.</p>
+        <ul className="fiber__capabilities" aria-label="Capacidades de la división de fibra óptica">
+          <li>Canalización y colocación de tritubo</li>
+          <li>Tendido de fibra óptica</li>
+          <li>Cruces especiales</li>
+          <li>Obras civiles asociadas</li>
+        </ul>
       </div>
       <figure className="fiber__visual">
         <img src={asset('/images/ai/fibra-obra-v3.webp')} alt="Cuadrilla instalando canalizaciones de fibra óptica en una obra de gran escala" width="1536" height="1024" loading="lazy" />
@@ -115,49 +117,45 @@ function FiberOptics() {
   </section>;
 }
 
-function Projects() {
-  const featured = [
+function Capabilities() {
+  const capabilities = [
     {
-      title: 'Segundo Anillo Sur',
-      client: 'Metrogas',
-      location: 'San Vicente, Buenos Aires',
-      summary: 'Construcción de ramales de alta presión y obras civiles complementarias.',
+      title: 'Obras nuevas y ampliaciones',
+      summary: 'Infraestructura energética ejecutada de punta a punta, desde la ingeniería y la preparación del terreno hasta el montaje y la puesta en servicio.',
+      items: ['Gasoductos, redes y estaciones de regulación', 'Obras EPC, civiles y electromecánicas', 'Acueductos, redes de incendio y fibra óptica'],
       image: asset('/images/ai/obra.webp'),
-      alt: 'Bajada de cañería con equipos de izaje en una obra de gasoducto',
+      alt: 'Construcción de infraestructura energética con equipos de izaje',
     },
     {
-      ...projects.find(project => project.title === 'Central Térmica Ezeiza'),
+      title: 'Mantenimiento y adecuaciones',
+      summary: 'Intervenciones sobre instalaciones existentes para sostener su operación, renovar componentes y adaptar la infraestructura a nuevas necesidades.',
+      items: ['Renovación y cambio de cañerías', 'Recobertura, reparación y protección catódica', 'Asistencia técnica, equipos y logística de obra'],
       image: asset('/images/obra-gasoducto.webp'),
-      alt: 'Tendido de cañería con equipos de excavación e izaje',
+      alt: 'Equipos trabajando sobre una cañería en una obra de mantenimiento',
     },
     {
-      ...projects.find(project => project.title === 'Acueducto principal de General Roca'),
+      title: 'Pruebas, verificaciones y certificaciones',
+      summary: 'Servicios técnicos para verificar instalaciones, documentar condiciones de operación y acompañar la entrega de cada intervención.',
+      items: ['Pruebas hidráulicas y secado de cañerías', 'Verificación de defectos y calibración de equipos', 'Prefabricado, inspección y certificaciones'],
       image: asset('/images/tiendetubos-en-obra.webp'),
-      alt: 'Bajada de cañería en una excavación con equipos tiendetubos',
+      alt: 'Personal y equipos técnicos trabajando junto a una excavación',
     },
   ];
-  const moreProjects = projects.filter(project => !featured.some(item => item.title === project.title));
   return <section className="projects container" id="obras" aria-labelledby="projects-title">
     <div className="section-heading">
-      <h2 id="projects-title">Nuestra experiencia en obra</h2>
-      <p>Gas, energía e infraestructura.</p>
+      <h2 id="projects-title">Qué hacemos</h2>
+      <p>Capacidad para ejecutar, mantener y verificar infraestructura.</p>
     </div>
     <div className="project-stories">
-      {featured.map((project, index) => <article className={`project-story ${index === 1 ? 'project-story--reverse' : ''}`} key={project.title}>
-        <img src={project.image} alt={project.alt} width="900" height="540" loading="lazy" />
+      {capabilities.map((capability, index) => <article className={`project-story ${index === 1 ? 'project-story--reverse' : ''}`} key={capability.title}>
+        <img src={capability.image} alt={capability.alt} width="900" height="540" loading="lazy" />
         <div className="project-story__copy">
           <hr aria-hidden="true" />
-          <h3>{project.title}</h3>
-          <p className="project-story__meta">{project.client} · {project.location}</p>
-          <p>{project.summary}</p>
+          <h3>{capability.title}</h3>
+          <p>{capability.summary}</p>
+          <ul className="capability-list">{capability.items.map(item => <li key={item}>{item}</li>)}</ul>
         </div>
       </article>)}
-    </div>
-    <div className="projects-more" id="project-list">
-      <h3>Más antecedentes</h3>
-      <ul>
-        {moreProjects.map(project => <li key={project.title}>{project.title}</li>)}
-      </ul>
     </div>
   </section>;
 }
@@ -249,7 +247,7 @@ export function App() {
         observer.unobserve(entry.target);
       });
     }, { threshold: 0.08 });
-    document.querySelectorAll('.company,.fiber__copy,.fiber__visual,.divisions,.project-showcase,.work-entry,.equipment,.clients,.contact').forEach(element => observer.observe(element));
+    document.querySelectorAll('.company,.fiber__copy,.fiber__visual,.project-story,.divisions,.equipment,.clients,.contact').forEach(element => observer.observe(element));
     const stop = () => { if (reduced.matches) { observer.disconnect(); animations.forEach(animation => animation.cancel()); } };
     reduced.addEventListener('change', stop);
     return () => { observer.disconnect(); animations.forEach(animation => animation.cancel()); reduced.removeEventListener('change', stop); };
@@ -257,7 +255,7 @@ export function App() {
   return <div id="inicio">
     <a className="skip-link" href="#contenido">Ir al contenido</a>
     <Header />
-    <main id="contenido"><Hero /><Company /><FiberOptics /><Divisions /><Projects /><Equipment /><Clients /><Contact /></main>
+    <main id="contenido"><Hero /><Company /><FiberOptics /><Capabilities /><Divisions /><Equipment /><Clients /><Contact /></main>
     <footer className="site-footer container"><Brand footer /><p>Ingeniería, Construcciones y Servicios</p></footer>
   </div>;
 }
