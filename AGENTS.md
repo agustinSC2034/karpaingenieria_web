@@ -8,7 +8,7 @@
 - Las nuevas fotos no tienen identificación confirmada de proyecto/cliente; no atribuirles nombres por inferencia.
 - Mostrar las divisiones de obra individualmente, incluyendo Fibra óptica como división propia. Basar el alcance técnico en los documentos aportados; no atribuir servicios de telecomunicaciones no documentados.
 - Fibra óptica debe tener un apartado destacado y acceso desde el menú. Evitar bloques largos de texto: mostrar síntesis y detalles desplegables para una lectura ágil.
-- Fibra óptica va antes de Divisiones: escena de obra de gran escala, no FTTH ni macro de cable. Sin botones de conocer/consultar fibra; sumar explicación breve.
+- Fibra óptica va después de Divisiones: escena de obra de gran escala, no FTTH ni macro de cable. Sus capacidades se comunican mediante el listado de trabajos, sin bloque de experiencia o metros de General Roca en la portada.
 - Divisiones: descripciones cortas siempre visibles en desktop; conservar descripción completa desplegable en mobile. Obras: antecedentes visibles sin controles que los oculten, foto principal panorámica.
 - Quitar consultar disponibilidad de equipos; mantener el bloque y ampliar sus capacidades. Logo regenerado fiel al emblema, con fondo blanco. Animaciones sutiles con respeto a movimiento reducido.
 
@@ -23,5 +23,5 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Clientes: mostrar los logos oficiales en una cinta automática continua, sin botones ni arrastre. Pausar al pasar el puntero y respetar la preferencia de movimiento reducido.
 - Título principal basado en la presentación corporativa: Ingeniería, construcciones y servicios. Retirar el epígrafe visible Imagen ilustrativa.
 - La portada debe mostrar Fibra óptica en lugar de Servicios especializados dentro de las capacidades principales. Mantener el título corporativo general.
-- Ordenar las capacidades principales como Gasoductos y redes, Fibra óptica y Obras EPC. En el bloque azul de fibra, destacar el trabajo a gran escala, mostrar canalización y tritubo, tendido, cruces especiales y obras civiles, y dar mayor presencia a la fotografía y a los metros ejecutados. No agregar un enlace adicional en el hero.
+- Ordenar el menú como Empresa, Qué hacemos, Divisiones, Fibra óptica, Equipos y Contacto. El Hero prioriza visualmente una obra de gasoducto. En el bloque azul de fibra, comunicar canalización y tritubo, tendido, cruces especiales y obras civiles mediante el listado de capacidades, sin dar protagonismo a metros ejecutados. No agregar un enlace adicional en el hero.
 - Qué hacemos: conservar las filas editoriales e imágenes del diseño aprobado, pero comunicar capacidades amplias —obras, mantenimiento, pruebas, verificaciones y certificaciones— en lugar de una muestra corta de proyectos. No mostrar el índice pequeño de Más antecedentes en la portada.

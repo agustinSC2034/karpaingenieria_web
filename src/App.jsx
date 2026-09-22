@@ -4,7 +4,7 @@ import { divisions, equipment, services } from './content';
 
 const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\/+/, '')}`;
 
-const links = [['Empresa', '#empresa'], ['Fibra óptica', '#fibra-optica'], ['Qué hacemos', '#obras'], ['Divisiones', '#divisiones'], ['Equipos', '#equipos'], ['Contacto', '#contacto']];
+const links = [['Empresa', '#empresa'], ['Qué hacemos', '#obras'], ['Divisiones', '#divisiones'], ['Fibra óptica', '#fibra-optica'], ['Equipos', '#equipos'], ['Contacto', '#contacto']];
 const Arrow = () => <ArrowRight size={24} weight="light" aria-hidden="true" />;
 
 function Brand({ footer = false }) {
@@ -47,7 +47,7 @@ function Hero() {
         <a className="button" href="#obras">Conocer nuestras capacidades <Arrow /></a>
       </div>
     </div>
-    <img className="hero__image" src={asset('/images/ai/hero.webp')} alt="Tiendetubos y personal de Karpa durante una maniobra de izaje de cañería" width="1600" height="1200" fetchPriority="high" />
+    <img className="hero__image" src={asset('/images/obra-gasoducto.webp')} alt="Tendido de cañería de gasoducto con equipos de excavación e izaje" width="1600" height="1200" fetchPriority="high" />
   </section>;
 }
 
@@ -109,10 +109,6 @@ function FiberOptics() {
       <figure className="fiber__visual">
         <img src={asset('/images/ai/fibra-obra-v3.webp')} alt="Cuadrilla instalando canalizaciones de fibra óptica en una obra de gran escala" width="1536" height="1024" loading="lazy" />
       </figure>
-      <div className="fiber__experience">
-        <div><h3>Experiencia en General Roca</h3><p>Acueducto principal · Central Térmica Roca</p></div>
-        <dl><div><dt>Tritubo instalado</dt><dd>17.000 <span>m</span></dd></div><div><dt>Fibra óptica tendida</dt><dd>20.000 <span>m</span></dd></div></dl>
-      </div>
     </div>
   </section>;
 }
@@ -130,8 +126,8 @@ function Capabilities() {
       title: 'Mantenimiento y adecuaciones',
       summary: 'Intervenciones sobre instalaciones existentes para sostener su operación, renovar componentes y adaptar la infraestructura a nuevas necesidades.',
       items: ['Renovación y cambio de cañerías', 'Recobertura, reparación y protección catódica', 'Asistencia técnica, equipos y logística de obra'],
-      image: asset('/images/obra-gasoducto.webp'),
-      alt: 'Equipos trabajando sobre una cañería en una obra de mantenimiento',
+      image: asset('/images/ai/hero.webp'),
+      alt: 'Tiendetubos y personal de Karpa durante una maniobra de izaje de cañería',
     },
     {
       title: 'Pruebas, verificaciones y certificaciones',
@@ -255,7 +251,7 @@ export function App() {
   return <div id="inicio">
     <a className="skip-link" href="#contenido">Ir al contenido</a>
     <Header />
-    <main id="contenido"><Hero /><Company /><FiberOptics /><Capabilities /><Divisions /><Equipment /><Clients /><Contact /></main>
+    <main id="contenido"><Hero /><Company /><Capabilities /><Divisions /><FiberOptics /><Equipment /><Clients /><Contact /></main>
     <footer className="site-footer container"><Brand footer /><p>Ingeniería, Construcciones y Servicios</p></footer>
   </div>;
 }
