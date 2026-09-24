@@ -47,7 +47,7 @@ function Hero() {
         <a className="button" href="#obras">Conocer nuestras capacidades <Arrow /></a>
       </div>
     </div>
-    <img className="hero__image" src={asset('/images/obra-gasoducto.webp')} alt="Tendido de cañería de gasoducto con equipos de excavación e izaje" width="1600" height="1200" fetchPriority="high" />
+    <img className="hero__image" src={asset('/images/karpa-planta-industrial-aerea.jpeg')} alt="Vista aérea de una instalación industrial con cañerías y equipos de montaje" width="1600" height="1066" fetchPriority="high" />
   </section>;
 }
 
@@ -119,8 +119,8 @@ function Capabilities() {
       title: 'Obras nuevas y ampliaciones',
       summary: 'Infraestructura energética ejecutada de punta a punta, desde la ingeniería y la preparación del terreno hasta el montaje y la puesta en servicio.',
       items: ['Gasoductos, redes y estaciones de regulación', 'Obras EPC, civiles y electromecánicas', 'Acueductos, redes de incendio y fibra óptica'],
-      image: asset('/images/ai/obra.webp'),
-      alt: 'Construcción de infraestructura energética con equipos de izaje',
+      image: asset('/images/karpa-montaje-industrial.jpeg'),
+      alt: 'Montaje industrial de una pieza de cañería suspendida mediante grúa',
     },
     {
       title: 'Mantenimiento y adecuaciones',
@@ -158,9 +158,14 @@ function Capabilities() {
 
 function Equipment() {
   const dialog = useRef(null);
+  const video = useRef(null);
   useEffect(() => {
     const element = dialog.current;
-    const reset = () => { document.body.style.overflow = ''; };
+    const reset = () => {
+      document.body.style.overflow = '';
+      video.current?.pause();
+      if (video.current) video.current.currentTime = 0;
+    };
     element.addEventListener('close', reset);
     return () => { element.removeEventListener('close', reset); reset(); };
   }, []);
@@ -181,6 +186,10 @@ function Equipment() {
         <h2 id="dialog-title">Equipos propios</h2>
         <p>Recursos para acompañar cada etapa de ejecución.</p>
         <img className="equipment-dialog__photo" src={asset('/images/ai/tiendetubos.webp')} width="900" height="900" alt="Tiendetubos trabajando sobre una excavación" loading="lazy" />
+        <div className="equipment-dialog__video">
+          <h3>Maniobra en obra</h3>
+          <video ref={video} src={asset('/images/karpa-maniobra-izaje.mp4')} controls playsInline preload="metadata" aria-label="Maniobra de izaje y montaje de una cañería de gran diámetro" />
+        </div>
         <dl>{equipment.map(([title, text]) => <div key={title}><dt>{title}</dt><dd>{text}</dd></div>)}</dl>
       </div>
     </dialog>
