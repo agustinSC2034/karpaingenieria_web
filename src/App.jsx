@@ -56,7 +56,7 @@ function Hero() {
     </div>
     {reducedMotion
       ? <img className="hero__image" src={asset('/images/karpa-planta-industrial-aerea.jpeg')} alt="Vista aérea de una instalación industrial con cañerías y equipos de montaje" width="1600" height="1066" fetchPriority="high" />
-      : <video className="hero__image" src={asset('/images/karpa-video-institucional-web.mp4')} poster={asset('/images/karpa-planta-industrial-aerea.jpeg')} width="1280" height="720" autoPlay muted loop playsInline preload="metadata" aria-hidden="true" />}
+      : <video className="hero__image" src={asset('/images/karpa-video-institucional.mp4')} poster={asset('/images/karpa-planta-industrial-aerea.jpeg')} width="1920" height="1080" autoPlay muted loop playsInline preload="auto" aria-hidden="true" />}
   </section>;
 }
 
