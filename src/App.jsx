@@ -39,6 +39,13 @@ function Header() {
 }
 
 function Hero() {
+  const [reducedMotion, setReducedMotion] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const change = () => setReducedMotion(media.matches);
+    media.addEventListener('change', change);
+    return () => media.removeEventListener('change', change);
+  }, []);
   return <section className="hero" aria-labelledby="hero-title">
     <div className="hero__intro container">
       <h1 id="hero-title">Ingeniería,<br />construcciones<br />y servicios</h1>
@@ -47,7 +54,9 @@ function Hero() {
         <a className="button" href="#obras">Conocer nuestras capacidades <Arrow /></a>
       </div>
     </div>
-    <img className="hero__image" src={asset('/images/karpa-planta-industrial-aerea.jpeg')} alt="Vista aérea de una instalación industrial con cañerías y equipos de montaje" width="1600" height="1066" fetchPriority="high" />
+    {reducedMotion
+      ? <img className="hero__image" src={asset('/images/karpa-planta-industrial-aerea.jpeg')} alt="Vista aérea de una instalación industrial con cañerías y equipos de montaje" width="1600" height="1066" fetchPriority="high" />
+      : <video className="hero__image" src={asset('/images/karpa-video-institucional-web.mp4')} poster={asset('/images/karpa-planta-industrial-aerea.jpeg')} width="1280" height="720" autoPlay muted loop playsInline preload="metadata" aria-hidden="true" />}
   </section>;
 }
 
@@ -66,7 +75,7 @@ function Company() {
         </details>)}
       </div>
     </div>
-    <img className="company__image" src={asset('/images/ai/planta.webp')} alt="Instalación industrial con cañerías, válvulas y equipos de regulación" width="680" height="419" loading="lazy" />
+    <img className="company__image" src={asset('/images/karpa-planta-industrial-aerea.jpeg')} alt="Vista aérea de una instalación industrial con cañerías y equipos de montaje" width="1600" height="1066" loading="lazy" />
   </section>;
 }
 
@@ -126,7 +135,7 @@ function Capabilities() {
       title: 'Mantenimiento y adecuaciones',
       summary: 'Intervenciones sobre instalaciones existentes para sostener su operación, renovar componentes y adaptar la infraestructura a nuevas necesidades.',
       items: ['Renovación y cambio de cañerías', 'Recobertura, reparación y protección catódica', 'Asistencia técnica, equipos y logística de obra'],
-      image: asset('/images/ai/hero.webp'),
+      image: asset('/images/obra-gasoducto.webp'),
       alt: 'Tiendetubos y personal de Karpa durante una maniobra de izaje de cañería',
     },
     {
@@ -158,14 +167,9 @@ function Capabilities() {
 
 function Equipment() {
   const dialog = useRef(null);
-  const video = useRef(null);
   useEffect(() => {
     const element = dialog.current;
-    const reset = () => {
-      document.body.style.overflow = '';
-      video.current?.pause();
-      if (video.current) video.current.currentTime = 0;
-    };
+    const reset = () => { document.body.style.overflow = ''; };
     element.addEventListener('close', reset);
     return () => { element.removeEventListener('close', reset); reset(); };
   }, []);
@@ -186,10 +190,6 @@ function Equipment() {
         <h2 id="dialog-title">Equipos propios</h2>
         <p>Recursos para acompañar cada etapa de ejecución.</p>
         <img className="equipment-dialog__photo" src={asset('/images/ai/tiendetubos.webp')} width="900" height="900" alt="Tiendetubos trabajando sobre una excavación" loading="lazy" />
-        <div className="equipment-dialog__video">
-          <h3>Maniobra en obra</h3>
-          <video ref={video} src={asset('/images/karpa-maniobra-izaje.mp4')} controls playsInline preload="metadata" aria-label="Maniobra de izaje y montaje de una cañería de gran diámetro" />
-        </div>
         <dl>{equipment.map(([title, text]) => <div key={title}><dt>{title}</dt><dd>{text}</dd></div>)}</dl>
       </div>
     </dialog>
