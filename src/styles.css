@@ -1053,3 +1053,35 @@ h3 {
   .capability-list { margin-top:20px }
   .capability-list li { padding:12px 0; font-size:16px }
 }
+
+.section-muted { background:#f5f6f8; box-shadow:0 -28px 0 #f5f6f8 }
+
+/* September 2026: compact services and six-work experience gallery. */
+.experience { padding-block:40px 65px }
+.experience__grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:3px; margin-top:28px }
+.experience__project { position:relative; display:block; width:100%; padding:0; border:0; border-radius:0; background:var(--navy); color:white; text-align:left; cursor:pointer; overflow:hidden; font:inherit; aspect-ratio:1.25 }
+.experience__project img { width:100%; height:100%; object-fit:cover; transition:transform .35s ease }
+.experience__project::after { content:''; position:absolute; inset:0; background:linear-gradient(transparent 15%,rgba(7,28,57,.85)) }
+.experience__project:hover img { transform:scale(1.025) }
+.experience__project:focus-visible { outline:3px solid var(--navy); outline-offset:4px; z-index:1 }
+.experience__title { position:absolute; z-index:1; inset:auto 24px 25px; display:flex; align-items:flex-end; justify-content:space-between; gap:18px; font-size:clamp(20px,1.9vw,28px); line-height:1.15; font-weight:600 }
+.experience__title svg { flex-shrink:0 }
+.experience-dialog__visual { margin:25px 0 0 }
+.experience-dialog__visual img { width:100%; max-height:320px; object-fit:cover }
+.experience-dialog__visual figcaption { font-size:13px; line-height:1.45; margin-top:8px; color:#536174 }
+.work-services { padding-block:20px 60px }
+.work-services h2 { font-size:clamp(27px,2.6vw,36px) }
+.work-services ul { list-style:none; margin:24px 0 0; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:0 28px }
+.work-services li { border-top:1px solid var(--rule); padding:18px 0; font-size:18px; line-height:1.35 }
+@media(max-width:900px) {
+  .experience__grid { grid-template-columns:repeat(2,minmax(0,1fr)) }
+  .work-services ul { grid-template-columns:repeat(2,minmax(0,1fr)) }
+}
+@media(max-width:760px) {
+  .experience { padding-block:25px 40px }
+  .experience__title { inset:auto 16px 18px; font-size:20px }
+  .experience__grid { grid-template-columns:1fr }
+  .experience__project { aspect-ratio:1.5 }
+  .work-services { padding-block:10px 36px }
+  .work-services li { font-size:16px; padding:15px 0 }
+}
