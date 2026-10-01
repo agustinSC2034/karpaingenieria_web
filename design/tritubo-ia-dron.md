@@ -1,0 +1,10 @@
+# Tritubo — vista aérea generada
+
+Herramienta: GPT Image integrada. Fecha: 1 de octubre de 2026.
+Asset: public/images/obras/punta-alta/tritubo-ia-dron.png.
+Ilustración generada, no fotografía documental de Punta Alta. Reemplaza la toma cercana por pedido del usuario; originales y variantes previas conservados.
+Referencia técnica consultada: https://strada.com.ar/producto/tritubo/ (PEAD, tendido subterráneo y bobinas autoportantes). La fuente no certifica el montaje generado.
+
+## Prompt final
+
+Recreate the attached construction scene as a DISTANT OBLIQUE DRONE photograph, camera about 25 metres above ground and 45 metres away, looking downward at 45 degrees. Landscape 16:9 high resolution. The entire tritubo installation work site is visible, people small in frame, equipment correctly scaled, NO foreground closeup. Flat dry grassy peri-urban Argentina terrain with a narrow straight shallow trench running diagonally for about 60 metres along a quiet roadside. Beside the trench, a realistically sized small conduit reel trailer (reel approx 1.8m diameter), two workers guiding black HDPE tritubo into the trench, one dusty yellow backhoe farther along the trench and one white utility pickup parked nearby. Keep all equipment in central two thirds, with ample surrounding earth and grass and visible linear route. Tritubo is a continuous strip of three joined small parallel HDPE tubes, not a huge pipeline; visible only at appropriate small scale. Clear plausible worksite geometry, natural irregular spoil piles on one side, tracks and worn ground. Use the attached image as a reference for vehicles, workers and restrained ordinary documentary photography. Remove all ground-level dramatic perspective. Overcast daylight, muted earthy colors, realistic modest drone sensor quality, slight natural softness and grain, no HDR or cinematic filters, no artificial tilt-shift blur, no glossy machinery or perfect landscaping. No text or logos. Illustrative recreation of a tritubo job, do not fabricate recognizable local landmarks.

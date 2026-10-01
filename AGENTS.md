@@ -24,10 +24,19 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 - Enfoque principal: ingeniería e infraestructura energética, obras EPC, ductos y piping. Título: Ingeniería e infraestructura energética. Mantener el video institucional y la cinta de clientes.
 - Menú: Empresa, Qué hacemos, Experiencia y Contacto. Orden: Hero, Empresa, Qué hacemos, Experiencia, Servicios de obra, Personas y equipos, Clientes, Contacto.
-- Empresa: más de 40 años ejecutando obras, alcance nacional e internacional en Argentina y Uruguay. Capacidades: Gasoductos y redes, Tendido de tritubo y Obras EPC.
+- Empresa: más de 45 años ejecutando obras, alcance nacional e internacional en Argentina y Uruguay. Capacidades: infraestructura energética, obras EPC y piping, tendido de tritubo y CCTV (resumen de Lucía del 1 de octubre).
 - Qué hacemos se condensa en una composición editorial. Servicios de obra tiene menor jerarquía, como listado compacto. Obras civiles significa obras complementarias a la infraestructura, no edificación general.
 - Fondos: blanco como base; Qué hacemos y Personas y equipos llevan gris suave #F5F6F8 de borde a borde, conservando los espacios y la composición actuales.
 - Eliminar la sección independiente y el enlace de menú de fibra óptica. Diferenciar canalización/tendido de tritubo del tendido de fibra; mencionar este último solamente en alcances respaldados.
-- Experiencia: grilla preparada para seis obras, fotografía y título con modal de detalle. Selección y fotografías actuales provisionales, pendientes de confirmación por el cliente. No inventar fechas ni atribuir fotografías no identificadas; indicar las fotos de referencia en el detalle.
-- Personas y equipos: destacar personal propio capacitado, seguridad, higiene, calidad, talleres de prefabricados y pintura y maquinaria disponible. Inventario final pendiente; sin cantidades ni certificaciones no confirmadas.
+- Experiencia: nueve obras del resumen (Leleque retirado por decisión del usuario); primero las seis resaltadas en amarillo por Lucía en Resumen Informacion.docx: General Roca, tritubo en Punta Alta, tercera posición Puerto Rosales, ERP–EMED Pirovano y Henderson, recobertura LGSM y Segundo Anillo Sur. Fotografías reales de sus carpetas, con galería en el modal; Punta Alta usa, por aprobación del usuario, la foto de tritubo de la presentación como referencia, con aclaración en el modal; su ubicación sigue sin confirmar. No inventar fechas ni sustituir una obra por otra.
+- Nuestro equipo: usar el texto confirmado por Lucía sobre personal capacitado, normas de Calidad y SSHH&MA, amplia flota y base operativa con talleres propios de prefabricados y pintura. Retirar el inventario provisional; no afirmar certificaciones concretas.
 - Contacto: correo institucional info@karpaingenieria.com.ar; futuro destinatario de prueba agustin.scutari@it-tel.com.ar. El envío queda pendiente hasta disponer del hosting/servicio de correo, por decisión del usuario del 28 de septiembre. No simular envíos exitosos.
+
+## Material de Lucía — 1 de octubre de 2026
+
+- Resumen Informacion.docx es la referencia actual de contenido; conservar el video institucional y el diseño aprobado, incluidos los dos fondos grises.
+- Servicios asociados: pruebas hidráulicas, prefabricados de cañerías, cruces especiales dirigidos, obra civil, movimiento de suelos, montaje electromecánico y recoating/recobertura.
+- Fotografías recibidas sin regenerar ni alterar, con originales en img/lucia-2026-10-01 y trazabilidad en design/lucia-2026-10-01.md.
+- Logo: azul ligeramente más oscuro y menos brillante, cercano al de títulos y botones; conservar la forma y el fondo blanco. Aplicar el mismo ajuste en encabezado y footer.
+
+- Tritubo Punta Alta: por pedido del usuario, usar tritubo-ia-dron-v3.png, recreación con IA en vista aérea distante, con tendido paralelo a la ruta, una retroexcavadora al fondo y luz cálida de tarde con textura fotográfica suave. Retirar la retro del primer plano por ubicación incoherente con la cuadrilla. Conservar la referencia y las variantes anteriores; documentar su origen generado sin leyenda visible en el modal, por decisión del usuario. No afirmar que acredita la obra.

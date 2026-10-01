@@ -1,0 +1,11 @@
+# Tritubo — revisión de vista aérea
+
+Generada con GPT Image integrada el 1 de octubre de 2026, editando `public/images/obras/punta-alta/tritubo-ia-dron.png`.
+
+Asset utilizado: `public/images/obras/punta-alta/tritubo-ia-dron-v2.png`. Recreación ilustrativa, no fotografía documental de Punta Alta. Originales y versiones anteriores conservados.
+
+Pedido aprobado: tendido paralelo a la calle, otra retroexcavadora y tono cálido de atardecer con menor nitidez y textura natural. Sin cambios al diseño de la web.
+
+## Prompt final
+
+Edit the reference image for a corporate construction website. Preserve the distant oblique drone viewpoint, landscape 16:9 framing, flat dry grassy Argentine roadside environment, white utility pickup, small crew, and modest conduit reel trailer. IMPORTANT GEOMETRY CORRECTION: the shallow trench and installed black HDPE tritubo must run PARALLEL to the road, a few metres inside the roadside verge, continuing longitudinally into the distance; absolutely no trench running perpendicular toward or terminating against the roadway. Recompose the work site as necessary for that credible parallel alignment. Show two dusty yellow backhoes spaced well apart along the same work corridor, each with coherent wheels, cabin and boom, one working at the leading trench excavation and the other parked farther down the route. A realistically scaled conduit reel trailer feeds a continuous bundle of THREE small joined HDPE conduits into the trench, crew guiding it with a gentle curve, no large pipeline. Keep people small in frame with proper safety clothing. Natural irregular soil spoil on one side, tyre tracks, worn dusty machines, uneven vegetation, practical worksite rather than staged perfection. Warm late-afternoon sunlight with subdued amber tones, soft long consistent shadows, restrained exposure, slight atmospheric haze. Ordinary older drone photograph quality: mildly softened detail, fine subtle sensor noise and understated JPEG-like texture, subdued saturation, no HDR, no razor-sharp microdetail, no fake tilt-shift or dramatic orange cinematic filter. Preserve believable scene scale, no extra buildings or landmarks, no text, no logos. This is an illustrative AI recreation; make no claims of actual project documentation.

@@ -63,7 +63,7 @@ function Hero() {
 function Company() {
   return <section className="company container section-grid" id="empresa" aria-labelledby="company-title">
     <div>
-      <h2 id="company-title">Más de 40 años<br className="desktop-break" /> ejecutando obras</h2>
+      <h2 id="company-title">Más de 45 años<br className="desktop-break" /> ejecutando obras</h2>
       <p className="company__intro">Desde Bahía Blanca, desarrollamos proyectos de infraestructura con alcance nacional e internacional, en Argentina y Uruguay.</p>
       <div className="services" id="especialidades">
         {services.map(service => <details className="disclosure" key={service.title}>
@@ -81,13 +81,14 @@ function Company() {
 
 function Divisions() {
   return <section className="work-services container" id="divisiones" aria-labelledby="divisions-title">
-    <div className="section-heading"><h2 id="divisions-title">Servicios de obra</h2><p>Capacidades que acompañan cada proyecto.</p></div>
+    <div className="section-heading"><h2 id="divisions-title">Servicios asociados</h2><p>Capacidades que acompañan cada proyecto.</p></div>
     <ul>{divisions.map(division => <li key={division.id}>{division.title}</li>)}</ul>
   </section>;
 }
 
 function Experience() {
   const [selected, setSelected] = useState(null);
+  const [photoIndex, setPhotoIndex] = useState(0);
   const dialog = useRef(null);
   const trigger = useRef(null);
   const previousOverflow = useRef('');
@@ -102,8 +103,8 @@ function Experience() {
   return <section className="experience container" id="experiencia" aria-labelledby="experience-title">
     <div className="section-heading"><h2 id="experience-title">Nuestra experiencia</h2><p>Obras de infraestructura en distintos sectores y territorios.</p></div>
     <div className="experience__grid">
-      {projects.slice(0, 6).map(project => <button type="button" className="experience__project" key={project.title} aria-haspopup="dialog" onClick={event => { trigger.current = event.currentTarget; setSelected(project); }}>
-        <img src={asset(project.image)} alt="" width="900" height="600" loading="lazy" />
+      {projects.map(project => <button type="button" className="experience__project" key={project.id} aria-haspopup="dialog" onClick={event => { trigger.current = event.currentTarget; setPhotoIndex(0); setSelected(project); }}>
+        {project.image && <img src={asset(project.image)} alt="" width="900" height="600" loading="lazy" />}
         <span className="experience__title">{project.title}<Arrow /></span>
       </button>)}
     </div>
@@ -111,7 +112,12 @@ function Experience() {
       {selected && <div className="equipment-dialog__inner">
         <button className="dialog-close" type="button" aria-label="Cerrar detalle de obra" autoFocus onClick={() => dialog.current.close()}><X size={28} weight="light" /></button>
         <h2 id="experience-detail-title">{selected.title}</h2>
-        <figure className="experience-dialog__visual"><img src={asset(selected.image)} alt={selected.imageAlt} width="900" height="600" />{selected.referenceImage && <figcaption>Fotografía de referencia de Karpa. La imagen específica de esta obra está pendiente de confirmación.</figcaption>}</figure>
+        {selected.images.length > 0 && <>
+          <figure className="experience-dialog__visual"><img src={asset(selected.images[photoIndex])} alt={`${selected.imageAlt}. Fotografía ${photoIndex + 1} de ${selected.images.length}`} width="900" height="600" />{selected.imageCaption && <figcaption>{selected.imageCaption}</figcaption>}</figure>
+          {selected.images.length > 1 && <div className="experience-dialog__thumbnails" role="group" aria-label="Fotografías de la obra">
+            {selected.images.map((photo, index) => <button type="button" key={photo} aria-label={`Ver fotografía ${index + 1} de ${selected.images.length}`} aria-pressed={photoIndex === index} onClick={() => setPhotoIndex(index)}><img src={asset(photo)} alt="" width="100" height="70" loading="lazy" /></button>)}
+          </div>}
+        </>}
         <dl><div><dt>Cliente</dt><dd>{selected.client}</dd></div>{selected.location && <div><dt>Ubicación</dt><dd>{selected.location}</dd></div>}{selected.period && <div><dt>Período</dt><dd>{selected.period}</dd></div>}<div><dt>Alcance de los trabajos</dt><dd>{selected.description}</dd></div></dl>
       </div>}
     </dialog>
@@ -123,7 +129,7 @@ function Capabilities() {
     {
       title: 'Obras nuevas y ampliaciones',
       summary: 'Integramos ingeniería, provisión y construcción en obras EPC. Ejecutamos piping y tendido de ductos, con montaje, mantenimiento y adecuaciones de infraestructura energética.',
-      items: ['Gasoductos, poliductos y piping industrial', 'Acueductos, redes de incendio y estaciones de regulación', 'Canalización y tendido de tritubo para fibra óptica'],
+      items: ['Gasoductos, poliductos y piping industrial', 'Acueductos, redes de incendio y estaciones de regulación', 'Tendido de tritubo y CCTV'],
       image: asset('/images/karpa-montaje-industrial.jpeg'),
       alt: 'Montaje industrial de una pieza de cañería suspendida mediante grúa',
     },
@@ -159,17 +165,17 @@ function Equipment() {
   return <>
     <section className="equipment container" id="equipos" aria-labelledby="equipment-title">
       <div className="equipment__copy">
-        <h2 id="equipment-title">Personas y equipos<br />propios</h2>
-        <p>Personal propio capacitado y recursos para ejecutar cada etapa, con criterios de seguridad, higiene y calidad.</p>
-        <ul className="equipment__capabilities"><li>Talleres de prefabricados y pintura</li><li>Retroexcavadoras, pala cargadora y tuneleras</li><li>Soldadura, grupos electrógenos y flota de transporte</li></ul>
-        <button className="button" onClick={show} type="button" aria-haspopup="dialog">Conocer nuestros equipos <Arrow /></button>
+        <h2 id="equipment-title">Nuestro equipo</h2>
+        <p>Contamos con personal capacitado para desarrollar los diferentes proyectos, priorizando las normas de Calidad y SSHH&amp;MA.</p>
+        <ul className="equipment__capabilities"><li>Amplia flota de equipos y maquinarias</li><li>Base operativa con talleres propios de prefabricados y pintura</li></ul>
+        <button className="button" onClick={show} type="button" aria-haspopup="dialog">Conocer nuestros recursos <Arrow /></button>
       </div>
       <img src={asset('/images/equipos-propios.webp')} width="680" height="382" alt="Excavadoras de Karpa sobre un carretón de transporte" loading="lazy" />
     </section>
     <dialog ref={dialog} className="equipment-dialog" aria-labelledby="dialog-title" onClick={event => { if (event.target === event.currentTarget) dialog.current.close(); }}>
       <div className="equipment-dialog__inner">
         <button className="dialog-close" type="button" onClick={() => dialog.current.close()} aria-label="Cerrar detalle de equipos" autoFocus><X size={28} weight="light" /></button>
-        <h2 id="dialog-title">Equipos propios</h2>
+        <h2 id="dialog-title">Nuestros recursos</h2>
         <p>Recursos para acompañar cada etapa de ejecución.</p>
         <img className="equipment-dialog__photo" src={asset('/images/tiendetubos-en-obra.webp')} width="900" height="900" alt="Tiendetubos trabajando sobre una excavación" loading="lazy" />
         <dl>{equipment.map(([title, text]) => <div key={title}><dt>{title}</dt><dd>{text}</dd></div>)}</dl>
