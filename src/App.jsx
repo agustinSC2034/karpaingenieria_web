@@ -51,7 +51,7 @@ function Hero() {
       <h1 id="hero-title">Ingeniería e<br />infraestructura<br />energética</h1>
       <div className="hero__copy">
         <p>Desarrollamos obras EPC, tendido de ductos y piping, integrando ingeniería, provisión y construcción.</p>
-        <a className="button" href="#obras">Conocer nuestras capacidades <Arrow /></a>
+        <a className="button" href="#obras">Conocé nuestras capacidades <Arrow /></a>
       </div>
     </div>
     {reducedMotion
@@ -168,7 +168,7 @@ function Equipment() {
         <h2 id="equipment-title">Nuestro equipo</h2>
         <p>Contamos con personal capacitado para desarrollar los diferentes proyectos, priorizando las normas de Calidad y SSHH&amp;MA.</p>
         <ul className="equipment__capabilities"><li>Amplia flota de equipos y maquinarias</li><li>Base operativa con talleres propios de prefabricados y pintura</li></ul>
-        <button className="button" onClick={show} type="button" aria-haspopup="dialog">Conocer nuestros recursos <Arrow /></button>
+        <button className="button" onClick={show} type="button" aria-haspopup="dialog">Conocé nuestros recursos <Arrow /></button>
       </div>
       <img src={asset('/images/equipos-propios.webp')} width="680" height="382" alt="Excavadoras de Karpa sobre un carretón de transporte" loading="lazy" />
     </section>
