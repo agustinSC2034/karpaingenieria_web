@@ -209,19 +209,45 @@ function Clients() {
 }
 
 function Contact() {
-  const [notice, setNotice] = useState(false);
-  const submit = event => { event.preventDefault(); setNotice(true); };
+  const [notice, setNotice] = useState('');
+  const [sending, setSending] = useState(false);
+  const submit = async event => {
+    event.preventDefault();
+    if (sending) return;
+    const form = event.currentTarget;
+    setSending(true);
+    setNotice('');
+    try {
+      const response = await fetch(asset('/api/contact.php'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        signal: AbortSignal.timeout(30000),
+      });
+      const result = await response.json();
+      if (!response.ok || result.ok !== true) throw new Error(result.message || 'No pudimos enviar la consulta. Intentá nuevamente más tarde.');
+      setNotice('Gracias por contactarnos. Recibimos tu consulta.');
+      form.reset();
+    } catch (error) {
+      setNotice(error instanceof SyntaxError || error.name === 'TimeoutError' || error.name === 'TypeError'
+        ? 'No pudimos confirmar el envío. Intentá más tarde o escribinos a info@karpaingenieria.com.ar.'
+        : error.message);
+    } finally {
+      setSending(false);
+    }
+  };
   return <section className="contact container section-grid" id="contacto" aria-labelledby="contact-title">
     <div>
       <h2 id="contact-title">Hablemos de tu<br />próximo proyecto</h2>
       <address>Río Negro 1002<br />Bahía Blanca, Buenos Aires<br /><a href="tel:+542914552263">0291 455-2263</a><br /><a href="mailto:info@karpaingenieria.com.ar">info@karpaingenieria.com.ar</a></address>
     </div>
     <form className="contact-form" onSubmit={submit}>
+      <div hidden aria-hidden="true"><label htmlFor="website">Sitio web</label><input id="website" name="website" tabIndex={-1} autoComplete="off" /></div>
       <div className="field"><label htmlFor="name">Nombre y empresa</label><input id="name" name="name" autoComplete="name" required maxLength={160} /></div>
       <div className="field"><label htmlFor="email">Correo electrónico</label><input id="email" name="email" type="email" autoComplete="email" required maxLength={254} /></div>
       <div className="field"><label htmlFor="message">Mensaje</label><textarea id="message" name="message" required rows={3} maxLength={4000} /></div>
-      <button className="button" type="submit">Enviar consulta <Arrow /></button>
-      {notice && <p className="form-notice" role="status">El envío desde la web todavía no está habilitado. Por el momento, podés contactarnos al <a href="tel:+542914552263">0291 455-2263</a>. Tu mensaje no fue enviado.</p>}
+      <button className="button" type="submit" disabled={sending}>{sending ? 'Enviando…' : 'Enviar consulta'} <Arrow /></button>
+      {notice && <p className="form-notice" role="status">{notice}</p>}
     </form>
   </section>;
 }

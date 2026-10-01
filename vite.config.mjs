@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS === "true" ? "/karpaingenieria_web/" : "/",
+  base: process.env.KARPA_DEPLOY_BASE || (process.env.GITHUB_ACTIONS === "true" ? "/karpaingenieria_web/" : "/"),
   build: {
     outDir: "dist/client",
   },
